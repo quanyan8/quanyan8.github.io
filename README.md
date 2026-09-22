@@ -23,3 +23,8 @@ News and everything else: edit `index.html` directly.
 Photo: `assets/photo.jpg` (800px JPEG made from `zhu31.png`, which is kept out of git).
 
 Then commit and push; the site updates within a minute or two.
+
+## Search
+
+`index.html` and `publications.html` carry meta descriptions, Open Graph tags, and schema.org
+JSON-LD (Person, Book, CollectionPage). When adding a new page or PDF, list it in `sitemap.xml`.
