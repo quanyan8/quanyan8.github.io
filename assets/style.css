@@ -61,7 +61,7 @@ section:last-of-type { border-bottom: 0; }
 /* Hero */
 .hero { display: grid; grid-template-columns: 200px 1fr; gap: 2.5rem; align-items: start; padding: 3.5rem 0 3rem; }
 .portrait {
-  width: 200px; height: 240px; border-radius: 10px; object-fit: cover;
+  width: 200px; height: 250px; border-radius: 10px; object-fit: cover; object-position: center top;
   background: var(--accent-soft); display: grid; place-items: center;
   font-family: var(--serif); font-size: 3.4rem; color: var(--accent);
 }
@@ -122,7 +122,7 @@ ol.publist li[hidden] { display: none; }
 
 @media (max-width: 720px) {
   .hero { grid-template-columns: 1fr; gap: 1.5rem; padding-top: 2rem; }
-  .portrait { width: 140px; height: 168px; font-size: 2.4rem; }
+  .portrait { width: 140px; height: 175px; font-size: 2.4rem; }
   .hero h1 { font-size: 2rem; }
   .grid-2 { grid-template-columns: 1fr; }
   .nav-links { margin-left: 0; gap: .8rem; }

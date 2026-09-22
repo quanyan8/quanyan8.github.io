@@ -20,7 +20,6 @@ CV: copy the new PDF over `assets/cv.pdf`.
 
 News and everything else: edit `index.html` directly.
 
-Photo: save a headshot as `assets/photo.jpg` and swap the `QZ` placeholder in `index.html`
-(instructions are in a comment there).
+Photo: `assets/photo.jpg` (800px JPEG made from `zhu31.png`, which is kept out of git).
 
 Then commit and push; the site updates within a minute or two.
