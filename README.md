@@ -8,6 +8,7 @@ Personal research homepage of Quanyan Zhu, served by GitHub Pages at https://qua
 - `publications.html`: full publication list, **generated**; don't edit it by hand
 - `assets/style.css`: shared styles (light and dark mode)
 - `assets/cv.pdf`: public CV (the "No Funding History" variant)
+- `tokenomics/`: AI Tokenomics book site (single page with interactive context-replay cost calculator); edit directly
 - `deception/`: Game Theory for Deception site (home with primer and interactive honeypot game, publications by theme, book, events); plain HTML sharing `deception/style.css`, edit directly
 - `tools/build_publications.py`: rebuilds `publications.html` from the LaTeX list
 

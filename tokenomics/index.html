@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Tokenomics: Production, Pricing, and Value in Token-Metered Intelligence | Quanyan Zhu</title>
+  <meta name="description" content="AI Tokenomics, a textbook by Quanyan Zhu (NYU) on how tokens are produced, consumed, priced, valued, and governed. Contents, key results, an interactive cost calculator, and free sample chapters.">
+  <meta name="author" content="Quanyan Zhu">
+  <link rel="canonical" href="https://quanyan8.github.io/tokenomics/">
+  <meta property="og:type" content="book">
+  <meta property="og:site_name" content="Quanyan Zhu">
+  <meta property="og:title" content="AI Tokenomics: Production, Pricing, and Value in Token-Metered Intelligence">
+  <meta property="og:description" content="A textbook on the economics of the token: how machine intelligence is produced, metered, priced, and governed. Free sample chapters.">
+  <meta property="og:url" content="https://quanyan8.github.io/tokenomics/">
+  <meta property="og:image" content="https://quanyan8.github.io/assets/books/ai-tokenomics-cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f4f1e8'/%3E%3Crect x='4' y='6' width='24' height='17' fill='none' stroke='%2316150f' stroke-width='2'/%3E%3Crect x='4' y='24' width='24' height='3' fill='%23c4432b'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    "name": "AI Tokenomics: Production, Pricing, and Value in Token-Metered Intelligence",
+    "author": {"@type": "Person", "@id": "https://quanyan8.github.io/#person", "name": "Quanyan Zhu", "url": "https://quanyan8.github.io/"},
+    "url": "https://quanyan8.github.io/tokenomics/",
+    "image": "https://quanyan8.github.io/assets/books/ai-tokenomics-cover.png",
+    "inLanguage": "en",
+    "about": ["AI tokenomics", "Economics of large language models", "Inference cost", "Pricing of AI services", "Agentic AI"],
+    "workExample": {"@type": "Book", "name": "AI Tokenomics: sample chapters (Part I)", "url": "https://quanyan8.github.io/assets/books/ai-tokenomics-sample.pdf", "bookFormat": "https://schema.org/EBook", "isAccessibleForFree": true}
+  }
+  </script>
+</head>
+<body>
+  <nav class="nav" aria-label="Site"><div class="wrap">
+    <a class="brand" href="./">AI <span>Token</span>omics</a>
+    <div class="links">
+      <a href="#chain">The chain</a>
+      <a href="#results">Key results</a>
+      <a href="#calculator">Calculator</a>
+      <a href="#contents">Contents</a>
+      <a href="#research">Research</a>
+      <a href="../">Quanyan Zhu ↗</a>
+    </div>
+  </div></nav>
+
+  <header class="hero"><div class="wrap grid">
+    <div>
+      <p class="label"><b>A textbook</b> · Manuscript, 2026</p>
+      <h1 class="tokens" aria-label="AI Tokenomics">
+        <span class="tok" aria-hidden="true">AI<small>20185</small></span>
+        <span class="tok" aria-hidden="true">Token<small>29130</small></span>
+        <span class="tok" aria-hidden="true">omics<small>31994</small></span>
+      </h1>
+      <p class="sub">Production, Pricing, and Value in Token-Metered Intelligence</p>
+      <p class="by">Quanyan Zhu · New York University</p>
+      <blockquote>The token is the kilowatt-hour of this new utility.</blockquote>
+      <p style="max-width:60ch">Machine intelligence is becoming a metered service, like electricity or bandwidth. This book
+        studies the economics of that service: how tokens are produced by inference hardware, how
+        applications and agents consume them, what the spending buys, and how the resulting market
+        should be priced, governed, and insured.</p>
+      <div class="btns">
+        <a class="btn primary" href="../assets/books/ai-tokenomics-sample.pdf">Read the sample chapters (PDF)</a>
+        <a class="btn" href="#contents">Full contents</a>
+        <a class="btn" href="https://arxiv.org/abs/2606.24616">Research paper (arXiv)</a>
+      </div>
+      <div class="facts">
+        <div><b>21</b><span>chapters</span></div>
+        <div><b>7</b><span>parts</span></div>
+        <div><b>4</b><span>appendices</span></div>
+        <div><b>~710</b><span>pages</span></div>
+      </div>
+    </div>
+    <a class="cover" href="../assets/books/ai-tokenomics-sample.pdf"><img src="../assets/books/ai-tokenomics-cover.png" alt="Cover of AI Tokenomics by Quanyan Zhu" width="420" height="600"></a>
+  </div></header>
+
+  <main>
+    <section id="why"><div class="wrap">
+      <div class="sec-head">
+        <span class="label">Why the economics comes next</span>
+        <h2>Deployment has outrun understanding</h2>
+      </div>
+      <div class="results">
+        <div class="result"><h3>For an enterprise</h3><p>Deciding whether to roll out an agent means knowing what it will consume, how that consumption grows as tasks lengthen, what it will cost at the prices actually paid, and whether the outcomes are worth more than the tokens.</p></div>
+        <div class="result"><h3>For a provider</h3><p>Pricing a service whose cost depends on hidden reasoning, and whose value depends on results the provider never observes.</p></div>
+        <div class="result"><h3>For a regulator</h3><p>Telling apart the features of the market that concern competition, those that concern risk, and those that are simply the arithmetic of a new utility.</p></div>
+        <div class="result"><h3>For research</h3><p>Systems papers stop at cost per million tokens; economics papers abstract away the machine that sets the cost floor. The book brings the two together around a single object: the token.</p></div>
+      </div>
+    </div></section>
+
+    <section id="chain"><div class="wrap">
+      <div class="sec-head">
+        <span class="label">The organizing idea</span>
+        <h2>From production to consumption to value</h2>
+        <p>The book follows one chain, from how silicon, energy, and capital become tokens, through how
+          applications and agents spend them, to what the spending buys. Pricing, markets, governance, and risk
+          are built around it.</p>
+      </div>
+      <div class="chain">
+        <div>
+          <span class="label"><b>01</b> Production</span>
+          <h3>The supply of inference</h3>
+          <p>The cost of producing tokens, the throughput–latency frontier and optimal utilization, capacity procurement, hosting, energy, water, and power.</p>
+          <span class="parts mono">Part II · Ch. 4–5</span>
+        </div>
+        <div>
+          <span class="label"><b>02</b> Consumption</span>
+          <h3>The demand for tokens</h3>
+          <p>Context, caching, and retrieval; reasoning, agents, and branching consumption; an algebra for estimating and forecasting what a workload will cost.</p>
+          <span class="parts mono">Part III · Ch. 6–8</span>
+        </div>
+        <div>
+          <span class="label"><b>03</b> Value</span>
+          <h3>From tokens to outcomes</h3>
+          <p>Total cost and quality floors, routing and cascades, token allocation and shadow prices in agentic workflows, and the valuation and attribution of agents.</p>
+          <span class="parts mono">Part IV · Ch. 9–12</span>
+        </div>
+      </div>
+      <div class="around">
+        <div><b>Pricing and markets</b> (Part V, Ch. 13–16): price lists and menus; token-based, value-based, and hybrid contracts; demand, rebound, and market structure; markets for compute and for agents.</div>
+        <div><b>Governance, risk, and society</b> (Part VI, Ch. 17–19): internal markets, budgets, and FinOps; risk, liability, and insurance; the political economy of tokenized machine labor.</div>
+      </div>
+    </div></section>
+
+    <section id="results"><div class="wrap">
+      <div class="sec-head">
+        <span class="label">Structural results</span>
+        <h2>Four results that outlast any price list</h2>
+        <p>Prices, products, and market facts change monthly, so the book keeps them in dated boxes. What it
+          develops instead are structural facts that hold whatever the current prices are.</p>
+      </div>
+      <div class="results">
+        <div class="result"><span class="n">01 · Production</span><h3>Utilization enters unit cost hyperbolically</h3><p>A pool of hardware costs the same per day whether or not it is busy. If it costs <i>C<sub>f</sub></i> a day, can deliver <i>N</i><sub>max</sub> tokens, and runs at utilization <i>u</i>, the capacity cost of a delivered token is inversely proportional to <i>u</i>. On a dedicated pool, cutting tokens by 90% raises the cost per token tenfold.</p><span class="eq">c̄(u) = C<sub>f</sub> / (u · N<sub>max</sub>)</span></div>
+        <div class="result"><span class="n">02 · Consumption</span><h3>Agentic consumption can diverge</h3><p>When an agent delegates, each invocation can spawn sub-investigations, and consumption becomes a branching process with mean branching factor <i>m</i>. At <i>m</i> = 0.8 an alert costs 5 calls on average; at 0.95, 20 calls; at <i>m</i> ≥ 1 the mean is no longer finite.</p><span class="eq">E[calls] = 1 / (1 − m), for m &lt; 1</span></div>
+        <div class="result"><span class="n">03 · Consumption</span><h3>Replayed context grows quadratically</h3><p>Every call of an agent loop re-sends the history. In the book's example, ten rounds consume 65,000 input tokens and forty rounds consume 860,000: four times the rounds, 13.2 times the tokens. <a href="#calculator">Try it below.</a></p><span class="eq">input tokens grow like n²</span></div>
+        <div class="result"><span class="n">04 · Value</span><h3>Token, cost, and value savings differ</h3><p>Token savings are not automatically cost savings: on a dedicated pool the daily bill is unchanged until capacity shrinks, and cheaper tokens invite more use. Cost savings are not value either, since value is not monotone in cost or in any single quality metric.</p><span class="eq">Δ tokens ≠ Δ cost ≠ Δ value</span></div>
+      </div>
+    </div></section>
+
+    <section id="calculator"><div class="wrap">
+      <div class="sec-head">
+        <span class="label">Interactive · Result 03</span>
+        <h2>Why long agent sessions get expensive</h2>
+        <p>An agent that keeps its conversation in context re-sends everything it has seen on every turn. Change
+          the settings and watch the cost curve bend upward. Prompt caching lowers the price of the replayed part,
+          but the quadratic shape remains.</p>
+      </div>
+      <div class="calc">
+        <form id="calc-form" onsubmit="return false">
+          <fieldset>
+            <legend>Workload</legend>
+            <div class="field"><label for="turns">Turns <output id="turns-o"></output></label><input type="range" id="turns" min="1" max="100" value="40"></div>
+            <div class="field"><label for="sys">System prompt and tools (tokens) <output id="sys-o"></output></label><input type="range" id="sys" min="0" max="20000" step="500" value="4000"></div>
+            <div class="field"><label for="uin">New input per turn (tokens) <output id="uin-o"></output></label><input type="range" id="uin" min="50" max="5000" step="50" value="800"></div>
+            <div class="field"><label for="out">Output per turn (tokens) <output id="out-o"></output></label><input type="range" id="out" min="50" max="3000" step="50" value="400"></div>
+          </fieldset>
+          <fieldset>
+            <legend>Prices (hypothetical)</legend>
+            <div class="field"><label for="pin">Input, $ per million tokens <output id="pin-o"></output></label><input type="range" id="pin" min="0.1" max="15" step="0.1" value="3"></div>
+            <div class="field"><label for="pout">Output, $ per million tokens <output id="pout-o"></output></label><input type="range" id="pout" min="0.5" max="75" step="0.5" value="15"></div>
+            <div class="field"><label for="cache">Cached input, share of full price <output id="cache-o"></output></label><input type="range" id="cache" min="0.05" max="1" step="0.05" value="0.1"></div>
+          </fieldset>
+          <p class="note">Prices are illustrative, not any provider's list price. The model: each turn re-sends the system prompt and the full history, then adds new input and generates output.</p>
+        </form>
+        <div>
+          <div class="readout" aria-live="polite">
+            <div class="hot"><b id="r-cost">–</b><span>session cost, no caching</span></div>
+            <div><b id="r-cache">–</b><span>session cost, with caching</span></div>
+            <div><b id="r-ratio">–</b><span>last turn vs. first turn</span></div>
+            <div><b id="r-replay">–</b><span>of input is replayed history</span></div>
+          </div>
+          <svg id="chart" viewBox="0 0 640 300" role="img" aria-labelledby="chart-title"><title id="chart-title">Cumulative session cost by turn</title></svg>
+          <div class="legend">
+            <span><i style="border-color:var(--accent)"></i>No caching</span>
+            <span><i style="border-color:var(--ink)"></i>With prompt caching</span>
+            <span><i style="border-color:var(--faint);border-top-style:dashed"></i>If every turn cost the same as the first</span>
+          </div>
+          <div class="formula">T<sub>in</sub>(n) = n·S + n·u + (u + o)·n(n − 1)/2</div>
+        </div>
+      </div>
+    </div></section>
+
+    <section id="audience"><div class="wrap">
+      <div class="sec-head">
+        <span class="label">Who it is for</span>
+        <h2>Six readers, six paths through the book</h2>
+      </div>
+      <div class="aud">
+        <div><h3>Those who price AI services</h3><p>The cost structure behind a price list, menus and screening, and token-based versus outcome-based contracts.</p><span class="ch">Parts II and V</span></div>
+        <div><h3>Engineers and architects</h3><p>Serving cost, consumption, caching, routing, and workflow allocation, turned into dollars and quality.</p><span class="ch">Parts II–IV</span></div>
+        <div><h3>Students and researchers</h3><p>Worked examples, exercises, offline laboratory exercises, and a map of open problems across fields.</p><span class="ch">Ch. 21 and Appendix C</span></div>
+        <div><h3>Policy makers and regulators</h3><p>Market structure, competition, liability, insurance, compute governance, and labor, separated from transient prices.</p><span class="ch">Ch. 1, 3, 9, 15, 16, 18, 19, 21</span></div>
+        <div><h3>Finance, procurement, FinOps</h3><p>Total cost of ownership, the choice of cost denominator, chargeback and budgets, and an enterprise program from visibility to value.</p><span class="ch">Ch. 9, 17, 20</span></div>
+        <div><h3>Managers and executives</h3><p>The questions to ask before a rollout, metrics that reward the right behavior, and the risks a token bill does not show.</p><span class="ch">Ch. 1, 9, 13, 17, 20</span></div>
+      </div>
+    </div></section>
+
+    <section id="examples"><div class="wrap">
+      <div class="sec-head">
+        <span class="label">Running examples</span>
+        <h2>Three systems carried through every chapter</h2>
+        <p>The second example is calibrated on a real experiment of 480 metered runs, so its numbers are measured rather than assumed. Every worked number in the book is reproduced by an accompanying script.</p>
+      </div>
+      <div class="examples">
+        <div class="ex"><span class="tag">R1</span><h3>Customer-support assistant</h3><p>A high-volume, low-margin service where utilization, caching, and routing decide the unit economics.</p></div>
+        <div class="ex"><span class="tag">R2</span><h3>Invoice-reconciliation agent</h3><p>A multi-step agent whose cost depends on reasoning depth and retries, measured across 480 metered runs.</p></div>
+        <div class="ex"><span class="tag">R3</span><h3>Multi-agent security operations</h3><p>A team of agents triaging alerts, where allocation, attribution, and liability all come into play.</p></div>
+      </div>
+    </div></section>
+
+    <section id="contents"><div class="wrap">
+      <div class="sec-head">
+        <span class="label">Contents of the complete manuscript</span>
+        <h2>21 chapters in 7 parts</h2>
+        <p>Part I is available now as a free sample. Every chapter opens with learning objectives and closes with key takeaways, notes on the literature, and exercises.</p>
+      </div>
+      <div class="toc">
+        <details open><summary><span class="pn">I</span>Foundations: Tokens as an Economic Resource<span class="in-sample">in sample</span></summary><ol>
+          <li><span class="c">1</span>The Economic Turn in Machine Intelligence</li>
+          <li><span class="c">2</span>How Inference Works: A Primer for Economists and Managers</li>
+          <li><span class="c">3</span>The Token as a Unit of Account</li></ol></details>
+        <details><summary><span class="pn">II</span>Production: The Supply of Inference</summary><ol>
+          <li><span class="c">4</span>The Cost of Producing Tokens</li>
+          <li><span class="c">5</span>Capacity, Hosting, and Energy</li></ol></details>
+        <details><summary><span class="pn">III</span>Consumption: The Demand for Tokens</summary><ol>
+          <li><span class="c">6</span>Token Demand: Context, Caching, and Retrieval</li>
+          <li><span class="c">7</span>Reasoning, Agents, and Branching Consumption</li>
+          <li><span class="c">8</span>Estimating Workload Cost: From Big-T to an Expected-Cost Algebra</li></ol></details>
+        <details><summary><span class="pn">IV</span>Value: From Tokens to Outcomes</summary><ol>
+          <li><span class="c">9</span>Total Cost, Outcomes, and Value</li>
+          <li><span class="c">10</span>Routing, Cascades, and the Deployment Problem</li>
+          <li><span class="c">11</span>Token Allocation in Agentic Workflows</li>
+          <li><span class="c">12</span>Valuing and Attributing Agents</li></ol></details>
+        <details><summary><span class="pn">V</span>Pricing and Markets</summary><ol>
+          <li><span class="c">13</span>Pricing Token-Metered Services</li>
+          <li><span class="c">14</span>Token-Based, Value-Based, and Hybrid Contracts</li>
+          <li><span class="c">15</span>Demand, Rebound, and Market Structure</li>
+          <li><span class="c">16</span>Token Markets and Agent Economies</li></ol></details>
+        <details><summary><span class="pn">VI</span>Governance, Risk, and Society</summary><ol>
+          <li><span class="c">17</span>Internal Markets, Budgets, and FinOps</li>
+          <li><span class="c">18</span>Risk, Liability, and Insurance</li>
+          <li><span class="c">19</span>Agentic Capital and the Political Economy of Tokens</li></ol></details>
+        <details><summary><span class="pn">VII</span>Practice and Prospect</summary><ol>
+          <li><span class="c">20</span>Case Studies in AI Tokenomics</li>
+          <li><span class="c">21</span>Open Problems and a Research Agenda</li></ol></details>
+        <details><summary><span class="pn">App.</span>Appendices</summary><ol>
+          <li><span class="c">A</span>Probability, Queueing, and Optimization</li>
+          <li><span class="c">B</span>Economics Primer</li>
+          <li><span class="c">C</span>Laboratory Exercises (run offline, no provider account needed)</li>
+          <li><span class="c">D</span>Glossary</li></ol></details>
+      </div>
+      <div class="btns" style="margin-top:2rem">
+        <a class="btn primary" href="../assets/books/ai-tokenomics-sample.pdf">Download Part I (PDF, 103 pages)</a>
+      </div>
+    </div></section>
+
+    <section id="research"><div class="wrap">
+      <div class="sec-head">
+        <span class="label">Related research</span>
+        <h2>Papers behind the book</h2>
+        <p>The book is the teaching treatment of a framework developed in the following research.</p>
+      </div>
+      <ul class="papers">
+        <li><div class="t">AI Tokenomics: The Economics of Tokens, Computation, and Pricing in Foundation Models</div><div class="m">Q. Zhu · <a href="https://arxiv.org/abs/2606.24616">arXiv:2606.24616</a>, 2026</div></li>
+        <li><div class="t">Agentomics: Economic Foundations for the Valuation, Attribution, and Pricing of AI Agents in Human-AI Workflows</div><div class="m">Q. Zhu · <a href="https://arxiv.org/abs/2606.14769">arXiv:2606.14769</a>, 2026</div></li>
+        <li><div class="t">PACT: A Contract-Theoretic Framework for Pricing Agentic AI Services Powered by Large Language Models</div><div class="m">Y.-T. Yang and Q. Zhu · IEEE GLOBECOM 2025 · <a href="https://doi.org/10.1109/globecom59602.2025.11431824">DOI</a></div></li>
+        <li><div class="t">Toward Reliable Design of LLM-Enabled Agentic Workflows: Optimizing Latency-Reliability-Cost Tradeoffs</div><div class="m">Y.-T. Yang and Q. Zhu · <a href="https://arxiv.org/abs/2605.23929">arXiv:2605.23929</a>, 2026</div></li>
+        <li><div class="t">Insurance of Agentic AI</div><div class="m">Q. Zhu · <a href="https://arxiv.org/abs/2606.05449">arXiv:2606.05449</a>, 2026</div></li>
+        <li><div class="t">AI-Native Insurance for Agentic AI: Pricing, Underwriting, and End-to-End Automation</div><div class="m">Q. Zhu · <a href="https://arxiv.org/abs/2607.13230">arXiv:2607.13230</a>, 2026</div></li>
+      </ul>
+      <p class="aside"><strong>A note on the word.</strong> “Tokenomics” was first used in cryptocurrency, for the supply
+        schedules and incentives of digital assets. That usage is unrelated to this book beyond the shared word:
+        here a token is the unit in which a language model reads and writes, and the unit in which its work is billed.</p>
+    </div></section>
+  </main>
+
+  <footer><div class="wrap">
+    <span>© 2026 Quanyan Zhu · New York University</span>
+    <span><a href="../">Homepage</a> · <a href="../publications.html">Publications</a> · <a href="mailto:qz494@nyu.edu">qz494@nyu.edu</a></span>
+  </div></footer>
+
+  <script>
+  (function () {
+    const $ = id => document.getElementById(id);
+    const ids = ['turns', 'sys', 'uin', 'out', 'pin', 'pout', 'cache'];
+    const fmtInt = n => Math.round(n).toLocaleString('en-US');
+    const fmtUsd = n => n >= 100 ? '$' + Math.round(n).toLocaleString('en-US')
+                     : n >= 1 ? '$' + n.toFixed(2) : '$' + n.toFixed(3);
+    const show = {
+      turns: v => fmtInt(v), sys: v => fmtInt(v), uin: v => fmtInt(v), out: v => fmtInt(v),
+      pin: v => '$' + v.toFixed(2), pout: v => '$' + v.toFixed(2), cache: v => Math.round(v * 100) + '%'
+    };
+    const NS = 'http://www.w3.org/2000/svg';
+    const svg = $('chart');
+    const W = 640, H = 300, L = 62, R = 14, T = 14, B = 34;
+
+    function el(name, attrs, text) {
+      const e = document.createElementNS(NS, name);
+      for (const k in attrs) e.setAttribute(k, attrs[k]);
+      if (text != null) e.textContent = text;
+      svg.appendChild(e);
+      return e;
+    }
+
+    function update() {
+      const v = {};
+      for (const id of ids) { v[id] = parseFloat($(id).value); $(id + '-o').textContent = show[id](v[id]); }
+      const n = v.turns, S = v.sys, u = v.uin, o = v.out;
+      const pin = v.pin / 1e6, pout = v.pout / 1e6, c = v.cache;
+      let cumNo = 0, cumCa = 0, totalIn = 0, replayed = 0, first = 0, last = 0;
+      const no = [0], ca = [0];
+      for (let k = 1; k <= n; k++) {
+        const prefix = S + (k - 1) * (u + o);         // system prompt + history re-sent this turn
+        const costNo = (prefix + u) * pin + o * pout;
+        const costCa = (k > 1 ? prefix * c : prefix) * pin + u * pin + o * pout;
+        cumNo += costNo; cumCa += costCa;
+        no.push(cumNo); ca.push(cumCa);
+        totalIn += prefix + u; replayed += (k - 1) * (u + o);
+        if (k === 1) first = costNo;
+        if (k === n) last = costNo;
+      }
+      $('r-cost').textContent = fmtUsd(cumNo);
+      $('r-cache').textContent = fmtUsd(cumCa);
+      $('r-ratio').textContent = (last / first).toFixed(1) + '×';
+      $('r-replay').textContent = totalIn ? Math.round(100 * replayed / totalIn) + '%' : '0%';
+
+      while (svg.lastChild && svg.lastChild.nodeName !== 'title') svg.removeChild(svg.lastChild);
+      const ymax = Math.max(cumNo, first * n) * 1.05 || 1;
+      const x = k => L + (W - L - R) * k / Math.max(n, 1);
+      const y = val => H - B - (H - T - B) * val / ymax;
+      for (let i = 0; i <= 4; i++) {
+        const val = ymax * i / 4;
+        el('line', { x1: L, x2: W - R, y1: y(val), y2: y(val), class: 'axis' });
+        el('text', { x: L - 8, y: y(val) + 4, 'text-anchor': 'end' }, '$' + (ymax >= 20 ? Math.round(val).toLocaleString('en-US') : val.toFixed(2)));
+      }
+      const ticks = Math.min(n, 5);
+      for (let i = 0; i <= ticks; i++) {
+        const k = Math.round(n * i / ticks);
+        el('text', { x: x(k), y: H - B + 18, 'text-anchor': 'middle' }, k);
+      }
+      el('text', { x: (L + W - R) / 2, y: H - 2, 'text-anchor': 'middle' }, 'turn');
+      const path = arr => arr.map((val, k) => (k ? 'L' : 'M') + x(k).toFixed(1) + ' ' + y(val).toFixed(1)).join(' ');
+      el('path', { d: 'M' + x(0) + ' ' + y(0) + ' L' + x(n) + ' ' + y(first * n), class: 'l-linear' });
+      el('path', { d: path(ca), class: 'l-cache' });
+      el('path', { d: path(no), class: 'l-nocache' });
+    }
+
+    ids.forEach(id => $(id).addEventListener('input', update));
+    update();
+  })();
+  </script>
+</body>
+</html>
