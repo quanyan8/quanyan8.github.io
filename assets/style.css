@@ -157,8 +157,6 @@ ol.publist li[hidden] { display: none; }
 .tab-panel p { max-width: 68ch; }
 :lang(ja) { font-family: var(--sans), "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif; line-height: 1.8; }
 
-/* Deception project spotlight */
-.spotlight {
   display: grid; gap: .35rem; margin-top: 1.5rem; padding: 1.4rem 1.5rem;
   border-radius: 10px; background: #0b1624; color: #eaf2fa; border-left: 5px solid #f2c94c;
 }
