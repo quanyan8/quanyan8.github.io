@@ -151,6 +151,7 @@ TEMPLATE = """<!DOCTYPE html>
       <h1>Publications</h1>
       <p>{total} entries, with my name in bold. See also
         <a href="https://scholar.google.com/citations?user=Qt2WDh0AAAAJ">Google Scholar</a>.</p>
+      <p><a class="btn primary" href="assets/publications.pdf">Download the full list (PDF)</a></p>
       <div class="pub-toc">
 {toc}
       </div>
