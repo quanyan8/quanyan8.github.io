@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agentic AI: Foundations, Systems, and Security | Quanyan Zhu</title>
+  <meta name="description" content="Agentic AI: Foundations, Systems, and Security, a graduate textbook by Quanyan Zhu (NYU). System-scientific foundations for AI agents that plan, use tools, and act: decision theory, learning, game theory, agent engineering, security, and governance. Free sample chapters.">
+  <meta name="author" content="Quanyan Zhu">
+  <meta name="theme-color" content="#121f3d">
+  <link rel="canonical" href="https://quanyan8.github.io/agentic-ai/">
+  <meta property="og:type" content="book">
+  <meta property="og:site_name" content="Quanyan Zhu">
+  <meta property="og:title" content="Agentic AI: Foundations, Systems, and Security">
+  <meta property="og:description" content="A textbook on AI systems that act: foundations, engineering, and security of agentic AI. Free sample chapters.">
+  <meta property="og:url" content="https://quanyan8.github.io/agentic-ai/">
+  <meta property="og:image" content="https://quanyan8.github.io/assets/books/agentic-ai-cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23121f3d'/%3E%3Cpath d='M8 24V14h16V7' fill='none' stroke='%23e9b24a' stroke-width='2'/%3E%3Crect x='20' y='3' width='8' height='8' fill='%23e9b24a'/%3E%3Crect x='4' y='22' width='8' height='6' rx='1' fill='none' stroke='%23e9b24a' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    "name": "Agentic AI: Foundations, Systems, and Security",
+    "author": {"@type": "Person", "@id": "https://quanyan8.github.io/#person", "name": "Quanyan Zhu", "url": "https://quanyan8.github.io/"},
+    "url": "https://quanyan8.github.io/agentic-ai/",
+    "image": "https://quanyan8.github.io/assets/books/agentic-ai-cover.png",
+    "inLanguage": "en",
+    "about": ["Agentic AI", "AI agents", "Large language model agents", "Multi-agent systems", "Game theory", "AI security", "AI governance"],
+    "workExample": {"@type": "Book", "name": "Agentic AI: sample chapters (Part I, Chapters 1–3)", "url": "https://quanyan8.github.io/assets/books/agentic-ai-sample.pdf", "bookFormat": "https://schema.org/EBook", "isAccessibleForFree": true}
+  }
+  </script>
+</head>
+<body>
+  <nav class="nav" aria-label="Site"><div class="wrap">
+    <a class="brand" href="./">Agentic <span>AI</span></a>
+    <div class="links">
+      <a href="#questions">Questions</a>
+      <a href="#parts">Structure</a>
+      <a href="#reliability">Reliability lab</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#contents">Contents</a>
+      <a href="#research">Research</a>
+      <a href="../">Quanyan Zhu ↗</a>
+    </div>
+  </div></nav>
+
+  <header class="hero grid-bg"><div class="wrap grid">
+    <div>
+      <p class="label"><b>A textbook</b> · Manuscript, 2026</p>
+      <h1>Agentic <span>AI</span></h1>
+      <p class="sub">Foundations, Systems, and Security</p>
+      <p class="by">Quanyan Zhu · New York University</p>
+      <p class="lede">Artificial intelligence is moving from systems that answer to systems that act. An agent receives a
+        goal, breaks it into steps, calls tools, reads what comes back, and keeps going, often for many steps and
+        with real authority delegated by a person or an organization. This book builds system-scientific
+        foundations for such agents and connects them to how agents are engineered, attacked, defended, and governed.</p>
+      <div class="btns">
+        <a class="btn primary" href="../assets/books/agentic-ai-sample.pdf">Read the sample chapters (PDF)</a>
+        <a class="btn" href="#reliability">Try the reliability lab</a>
+        <a class="btn" href="#contents">Contents</a>
+      </div>
+      <div class="facts">
+        <div><b>18</b><span>chapters</span></div>
+        <div><b>3</b><span>parts</span></div>
+        <div><b>6</b><span>hands-on labs</span></div>
+        <div><b>~760</b><span>pages</span></div>
+      </div>
+    </div>
+    <a class="cover" href="../assets/books/agentic-ai-sample.pdf"><img src="../assets/books/agentic-ai-cover.png" alt="Cover of Agentic AI: Foundations, Systems, and Security by Quanyan Zhu" width="420" height="600"></a>
+  </div></header>
+
+  <main>
+    <section id="acting" class="band-navy2"><div class="wrap">
+      <div class="sec-head">
+        <span class="label">Chapter 1 · Example 1.1</span>
+        <h2>Answering versus acting</h2>
+        <p>Three systems built on the same language model, each asked about getting to New York on Friday evening.</p>
+      </div>
+      <div class="systems">
+        <div class="sys"><span class="tag">System A</span><h3>Answers from memory</h3><p>Answers travel questions from its training data. A person reads the answer, checks it, and acts.</p><p class="err">An error yields <b>a wrong sentence.</b></p></div>
+        <div class="sys"><span class="tag">System B</span><h3>Answers with retrieval</h3><p>First looks up the current timetable with a search tool. Better informed, but no more agentic in the sense that matters for risk.</p><p class="err">An error yields <b>a wrong, but current, sentence.</b></p></div>
+        <div class="sys act"><span class="tag">System C</span><h3>Acts</h3><p>Receives the goal “book me a refundable seat to New York for Friday evening under $150”, and may search, hold, purchase, and edit the calendar.</p><p class="err">An error yields <b>a wrong purchase, a double booking, or a leaked payment credential.</b></p></div>
+      </div>
+      <p class="pull">The difference between producing an output and pursuing an outcome is the subject of this book.</p>
+    </div></section>
+
+    <section id="questions"><div class="wrap">
+      <div class="sec-head">
+        <span class="label">Why foundations</span>
+        <h2>Six questions no benchmark settles</h2>
+        <p>Without foundations, we proceed by trial and error: expensive in any engineering discipline, and dangerous in
+          an adversarial one. When failures are found by trial, the first to find them may be an attacker.</p>
+      </div>
+      <div class="qs">
+        <div class="q"><span class="n">01</span><h3>Resources</h3><p>How should an agent spend tokens, compute, time, and human attention, and when does more reasoning, sampling, or verification pay for itself?</p></div>
+        <div class="q"><span class="n">02</span><h3>Security</h3><p>An agent reads untrusted content while holding real permissions, and attackers write part of its input and adapt to its defenses.</p></div>
+        <div class="q"><span class="n">03</span><h3>Interoperability</h3><p>Agents connect through protocols such as MCP and Agent2Agent. What must those protocols guarantee, and who bears the risk when a composition fails?</p></div>
+        <div class="q"><span class="n">04</span><h3>Governance</h3><p>How are trust, accountability, and liability allocated along the chain from model developer to deployer, user, and agent?</p></div>
+        <div class="q"><span class="n">05</span><h3>Emergent risks</h3><p>Failures that appear only at scale: correlated errors across copies of one model, cascades through pipelines, tacit collusion among pricing agents.</p></div>
+        <div class="q"><span class="n">06</span><h3>Agent networks</h3><p>What collective behavior emerges when many self-interested agents, acting for different principals, coordinate, compete, and form coalitions?</p></div>
+      </div>
+    </div></section>
+
+    <section id="parts" class="grid-bg" style="border-top:1px solid var(--rule)"><div class="wrap">
+      <div class="sec-head">
+        <span class="label">Three perspectives, one per part</span>
+        <h2>An agent as a feedback system among principals, adversaries, and institutions</h2>
+        <p>The book draws on decision theory, control, learning, game theory, and information theory, the disciplines that
+          have long studied such systems, and connects them to the engineering of real agents and to their security,
+          safety, and governance.</p>
+      </div>
+      <div class="parts">
+        <div class="part"><span class="label">Part I · Ch. 1–6</span><h3>Foundations</h3><p>Agents as decision-makers: how an agent decides, learns, plans, and interacts with other agents.</p>
+          <ul><li>Sequential decisions, MDPs, partial observability</li><li>From reinforcement learning to foundation models</li><li>Reasoning, planning, and control</li><li>Game theory and strategic information</li></ul></div>
+        <div class="part"><span class="label">Part II · Ch. 7–12</span><h3>Systems</h3><p>How agents are built, connected, and measured in practice.</p>
+          <ul><li>Architectures of LLM-based agents</li><li>Tools, actions, environments, MCP</li><li>Memory, knowledge, and context</li><li>Multi-agent orchestration, evaluation, case studies</li></ul></div>
+        <div class="part"><span class="label">Part III · Ch. 13–18</span><h3>Security, Safety, and Governance</h3><p>How agents are attacked, defended, overseen, and held accountable.</p>
+          <ul><li>Threat models and adversarial games</li><li>Resilience, guardrails, runtime assurance</li><li>Alignment and human oversight</li><li>Trust, accountability, and regulation</li></ul></div>
+      </div>
+      <div class="thesis">
+        <div><b>Engineering without theory</b> gives no guarantees.</div>
+        <div><b>Theory without systems</b> misses the ways real agents fail.</div>
+        <div><b>Neither is enough</b> without a strategic account of adversaries and institutions.</div>
+      </div>
+    </div></section>
+
+    <section id="reliability" class="band-teal"><div class="wrap">
+      <div class="sec-head">
+        <span class="label">Interactive · Section 2.5, Proposition 2.13</span>
+        <h2>How long can an agent run before it fails?</h2>
+        <p>A long task gives an agent many chances to go wrong and, if it is well designed, many chances to put things right.
+          After each step the agent is <b>on track</b>, <b>off track</b> but recoverable, or has <b>failed</b> irreversibly.
+          The presets reproduce the book's Example 2.14 for the software engineering agent R2 over a 40-step budget.</p>
+      </div>
+      <div class="lab">
+        <form onsubmit="return false" aria-label="Reliability parameters">
+          <div class="presets" role="group" aria-label="Design presets from Example 2.14">
+            <button type="button" data-p="0.05,0.3,0.002,0.03" aria-pressed="true">Base design</button>
+            <button type="button" data-p="0.05,0,0.002,0.03" aria-pressed="false">No recovery</button>
+            <button type="button" data-p="0.05,0.6,0.002,0.03" aria-pressed="false">Tests after every edit</button>
+            <button type="button" data-p="0.05,0.3,0.002,0.01" aria-pressed="false">Sandbox &amp; checkpoint</button>
+            <button type="button" data-p="0.05,0.6,0.002,0.01" aria-pressed="false">Both</button>
+          </div>
+          <div class="field"><label for="eps"><span><i>ε</i> recoverable error</span><output id="eps-o"></output></label><input type="range" id="eps" min="0" max="0.2" step="0.005" value="0.05"><small>a wrong edit or a misread file, noticed later if at all</small></div>
+          <div class="field"><label for="rho"><span><i>ρ</i> recovery</span><output id="rho-o"></output></label><input type="range" id="rho" min="0" max="1" step="0.01" value="0.3"><small>spots and repairs a standing error on a given step</small></div>
+          <div class="field"><label for="phi"><span><i>φ</i> fatal slip while on track</span><output id="phi-o"></output></label><input type="range" id="phi" min="0" max="0.05" step="0.001" value="0.002"><small>an irreversible action even when things are going well</small></div>
+          <div class="field"><label for="psi"><span><i>ψ</i> fatal action while off track</span><output id="psi-o"></output></label><input type="range" id="psi" min="0" max="0.2" step="0.005" value="0.03"><small>e.g. force-pushing over a teammate's branch while confused</small></div>
+          <div class="field"><label for="T"><span><i>T</i> step budget</span><output id="T-o"></output></label><input type="range" id="T" min="5" max="300" step="1" value="40"></div>
+        </form>
+        <div>
+          <div class="readout" aria-live="polite">
+            <div class="g"><b id="r-g">–</b><span>succeeds (on track at T)</span></div>
+            <div class="e"><b id="r-e">–</b><span>still off track at T</span></div>
+            <div class="f"><b id="r-f">–</b><span>failed irreversibly</span></div>
+            <div><b id="r-half">–</b><span>steps until success halves</span></div>
+          </div>
+          <p class="subread">Effective hazard <b id="r-zeta">–</b> per step · long-run plateau without hazard <b id="r-plateau">–</b></p>
+          <svg id="rel-chart" viewBox="0 0 640 280" role="img" aria-labelledby="rel-title"><title id="rel-title">Probability of each state by step</title></svg>
+          <div class="legend">
+            <span><i style="background:var(--green)"></i>On track (G)</span>
+            <span><i style="background:var(--gold)"></i>Off track, recoverable (E)</span>
+            <span><i style="background:var(--rust)"></i>Failed (F)</span>
+          </div>
+          <div class="formula">g<sub>t+1</sub> = (1−ε−φ)·g<sub>t</sub> + ρ·e<sub>t</sub>, &nbsp; e<sub>t+1</sub> = ε·g<sub>t</sub> + (1−ρ−ψ)·e<sub>t</sub>, &nbsp; ζ = (ρφ + εψ)/(ε + ρ)</div>
+          <p class="chain-note">Without an irreversible hazard, success plateaus at ρ/(ε+ρ). With any hazard it decays geometrically, and no amount of
+            recovery beats the hazard. Recovery helps by shortening the time spent off track, where the hazard is high.</p>
+        </div>
+      </div>
+    </div></section>
+
+    <section id="examples"><div class="wrap">
+      <div class="sec-head">
+        <span class="label">Running examples</span>
+        <h2>Three agents carried through every chapter</h2>
+        <p>Each is a composite of systems described in the research literature and deployed in practice, chosen so that together
+          they span theory, systems, and security.</p>
+      </div>
+      <div class="examples">
+        <div class="ex"><span class="tag">R1</span><h3>Research assistant</h3><p>Searches the web and scholarly databases, extracts findings, runs analyses in a Python sandbox, keeps notes across sessions, and delivers a cited report.</p>
+          <p class="stress"><b>Stresses</b>long-horizon information gathering, memory, and source reliability. In the security chapters it is the canonical agent that reads untrusted content while holding private data and an outbound channel.</p></div>
+        <div class="ex"><span class="tag">R2</span><h3>Software engineering agent</h3><p>Explores a codebase, edits files, runs the tests in a container, iterates until they pass, and opens a pull request for human review.</p>
+          <p class="stress"><b>Stresses</b>tool use over many steps and verification through tests. Its clear feedback signal is also a vulnerability: it can learn to make tests pass without fixing the bug.</p></div>
+        <div class="ex"><span class="tag">R3</span><h3>Security operations agent</h3><p>Triages alerts, queries logs and threat intelligence, correlates events into incidents, and with human approval executes containment such as isolating a host.</p>
+          <p class="stress"><b>Stresses</b>acting under adversarial pressure, where the attacker writes part of the input and a wrong containment action has real cost.</p></div>
+      </div>
+    </div></section>
+
+    <section id="teaching" class="band-umber"><div class="wrap two">
+      <div>
+        <div class="sec-head" style="margin-bottom:1.3rem">
+          <span class="label">Using the book in a course</span>
+          <h2>Three courses</h2>
+        </div>
+        <div class="course"><h3>Foundations of agentic AI (theory)</h3><p>Chapters 1–6, 14, and 16, with Appendices A–C as background.</p></div>
+        <div class="course"><h3>Building agents (systems)</h3><p>Chapter 1, Sections 2.5–2.6 and 4.4, Chapters 7–13 and 15, and the labs of Appendix D.</p></div>
+        <div class="course"><h3>Secure and trustworthy agents</h3><p>Chapters 1, 5, 7, 8, and 13–17.</p></div>
+        <p style="color:var(--muted);font-size:.92rem;margin-top:1.2rem">Every chapter opens with learning objectives and closes with key takeaways, notes on further reading, and exercises from proofs to programming. Prerequisites: probability, linear algebra, basic optimization, and some programming.</p>
+      </div>
+      <div>
+        <div class="sec-head" style="margin-bottom:1.3rem">
+          <span class="label">Appendix D</span>
+          <h2>Build a working agent, step by step</h2>
+        </div>
+        <ol class="labs">
+          <li>A minimal agent loop</li>
+          <li>Tools and the Model Context Protocol</li>
+          <li>Retrieval and memory</li>
+          <li>Multi-agent debate</li>
+          <li>Prompt-injection red teaming in a sandbox</li>
+          <li>Building an evaluation harness</li>
+        </ol>
+      </div>
+    </div></section>
+
+    <section id="contents"><div class="wrap">
+      <div class="sec-head">
+        <span class="label">Contents</span>
+        <h2>18 chapters in 3 parts, plus 4 appendices</h2>
+        <p>Part I's first three chapters are available now as a free sample, together with the preface, full contents, and notation.</p>
+      </div>
+      <div class="toc">
+        <div><h3><span>Part I</span>Foundations: Agents as Decision-Makers</h3><ol>
+          <li><span class="c">1</span><span>Agentic AI: Concepts, History, and Scope<span class="in-sample">sample</span></span></li>
+          <li><span class="c">2</span><span>Agents as Sequential Decision-Makers<span class="in-sample">sample</span></span></li>
+          <li><span class="c">3</span><span>Learning Agents: From Reinforcement Learning to Foundation Models<span class="in-sample">sample</span></span></li>
+          <li><span class="c">4</span><span>Reasoning, Planning, and Control</span></li>
+          <li><span class="c">5</span><span>Multi-Agent Systems and Game Theory</span></li>
+          <li><span class="c">6</span><span>Information, Beliefs, and Communication</span></li></ol></div>
+        <div><h3><span>Part II</span>Systems: Engineering Agentic AI</h3><ol>
+          <li><span class="c">7</span><span>Architectures of LLM-Based Agents</span></li>
+          <li><span class="c">8</span><span>Tools, Actions, and Environments</span></li>
+          <li><span class="c">9</span><span>Memory, Knowledge, and Context</span></li>
+          <li><span class="c">10</span><span>Multi-Agent Orchestration</span></li>
+          <li><span class="c">11</span><span>Evaluation and Benchmarking</span></li>
+          <li><span class="c">12</span><span>Agentic AI in Practice: Case Studies</span></li></ol></div>
+        <div><h3><span>Part III</span>Security, Safety, and Governance</h3><ol>
+          <li><span class="c">13</span><span>Threat Models for Agentic Systems</span></li>
+          <li><span class="c">14</span><span>Adversarial Games and Strategic Defense</span></li>
+          <li><span class="c">15</span><span>Resilience, Guardrails, and Runtime Assurance</span></li>
+          <li><span class="c">16</span><span>Alignment and Human Oversight</span></li>
+          <li><span class="c">17</span><span>Trust, Accountability, and Governance</span></li>
+          <li><span class="c">18</span><span>Open Problems and the Road Ahead</span></li></ol></div>
+      </div>
+      <div class="toc" style="margin-top:1.5rem">
+        <div><h3><span>Appendices</span>Background</h3><ol>
+          <li><span class="c">A</span><span>Probability, Optimization, and Information Theory</span></li>
+          <li><span class="c">B</span><span>Game Theory Primer</span></li></ol></div>
+        <div><h3><span>&nbsp;</span>&nbsp;</h3><ol>
+          <li><span class="c">C</span><span>Reinforcement Learning and Control Primer</span></li>
+          <li><span class="c">D</span><span>Laboratory Exercises</span></li></ol></div>
+      </div>
+      <div class="btns" style="margin-top:2rem"><a class="btn primary" href="../assets/books/agentic-ai-sample.pdf">Download the sample (PDF, 126 pages)</a></div>
+    </div></section>
+
+    <section id="research" class="band-navy2"><div class="wrap">
+      <div class="sec-head">
+        <span class="label">Related research</span>
+        <h2>Papers behind the book</h2>
+      </div>
+      <ul class="papers">
+        <li><div class="t">The Internet of Agentic AI: Communication, Coordination, and Collective Intelligence at Scale</div><div class="m">Q. Zhu · <a href="https://arxiv.org/abs/2606.12835">arXiv:2606.12835</a>, 2026</div></li>
+        <li><div class="t">Internet of Agentic AI: Incentive-Compatible Distributed Teaming and Workflow</div><div class="m">Y.-T. Yang and Q. Zhu · WiOpt 2026 · <a href="https://doi.org/10.23919/wiopt71098.2026.11568240">DOI</a></div></li>
+        <li><div class="t">Internet of Agentic Things: Networked AI Agents for Closed-Loop IoT Orchestration</div><div class="m">Q. Zhu · <a href="https://arxiv.org/abs/2607.12662">arXiv:2607.12662</a>, 2026</div></li>
+        <li><div class="t">Controlling Agentic AI: Game-Theoretic Foundations of Coordination and Competition in LLM Multi-Agent Systems</div><div class="m">Q. Zhu · LSU Symposium on Control, Learning, and Intelligent Systems, 2026 · <a href="https://doi.org/10.31390/lsucontrol.26.59">DOI</a></div></li>
+        <li><div class="t">Reasoning and Behavioral Equilibria in LLM-Nash Games: From Mindsets to Actions</div><div class="m">Q. Zhu · <a href="https://arxiv.org/abs/2507.08208">arXiv:2507.08208</a>, 2025</div></li>
+        <li><div class="t">A Variational Framework for LLM Generator-Regulator Games</div><div class="m">Q. Zhu · <a href="https://arxiv.org/abs/2606.18424">arXiv:2606.18424</a>, 2026</div></li>
+        <li><div class="t">Agentic AI for Cyber Resilience: A New Security Paradigm and Its System-Theoretic Foundations</div><div class="m">T. Li and Q. Zhu · <a href="https://arxiv.org/abs/2512.22883">arXiv:2512.22883</a>, 2025</div></li>
+        <li><div class="t">Toward Reliable Design of LLM-Enabled Agentic Workflows: Optimizing Latency-Reliability-Cost Tradeoffs</div><div class="m">Y.-T. Yang and Q. Zhu · <a href="https://arxiv.org/abs/2605.23929">arXiv:2605.23929</a>, 2026</div></li>
+        <li><div class="t">Agentomics: Economic Foundations for the Valuation, Attribution, and Pricing of AI Agents in Human-AI Workflows</div><div class="m">Q. Zhu · <a href="https://arxiv.org/abs/2606.14769">arXiv:2606.14769</a>, 2026</div></li>
+        <li><div class="t">Insurance of Agentic AI</div><div class="m">Q. Zhu · <a href="https://arxiv.org/abs/2606.05449">arXiv:2606.05449</a>, 2026</div></li>
+      </ul>
+      <div class="see">
+        <a class="btn" href="../tokenomics/">Companion book: AI Tokenomics →</a>
+        <a class="btn" href="../deception/">Game Theory for Deception →</a>
+        <a class="btn" href="../publications.html">All publications →</a>
+      </div>
+    </div></section>
+  </main>
+
+  <footer><div class="wrap">
+    <span>© 2026 Quanyan Zhu · New York University</span>
+    <span><a href="../">Homepage</a> · <a href="../publications.html">Publications</a> · <a href="mailto:qz494@nyu.edu">qz494@nyu.edu</a></span>
+  </div></footer>
+
+  <script>
+  (function () {
+    const $ = id => document.getElementById(id);
+    const keys = ['eps', 'rho', 'phi', 'psi', 'T'];
+    const fmt = { eps: v => v.toFixed(3), rho: v => v.toFixed(2), phi: v => v.toFixed(3), psi: v => v.toFixed(3), T: v => String(v) };
+    const pct = x => (100 * x).toFixed(1) + '%';
+    const svg = $('rel-chart'), NS = 'http://www.w3.org/2000/svg';
+    const W = 640, H = 280, L = 44, R = 12, Tp = 10, B = 30;
+    const el = (n, a, t) => { const e = document.createElementNS(NS, n); for (const k in a) e.setAttribute(k, a[k]); if (t != null) e.textContent = t; svg.appendChild(e); return e; };
+
+    // Proposition 2.13(i): g_{t+1} = a g_t + rho e_t, e_{t+1} = eps g_t + b e_t, F absorbing.
+    function simulate(eps, rho, phi, psi, T) {
+      const a = 1 - eps - phi, b = 1 - rho - psi;
+      const g = [1], e = [0];
+      for (let t = 0; t < T; t++) {
+        g.push(a * g[t] + rho * e[t]);
+        e.push(eps * g[t] + b * e[t]);
+      }
+      return { g, e };
+    }
+    function halving(eps, rho, phi, psi) {
+      const a = 1 - eps - phi, b = 1 - rho - psi;
+      let g = 1, e = 0;
+      for (let t = 1; t <= 100000; t++) {
+        [g, e] = [a * g + rho * e, eps * g + b * e];
+        if (g <= 0.5) return t;
+        if (g < 1e-12) break;
+      }
+      return null;
+    }
+
+    function update() {
+      const v = {};
+      for (const k of keys) { v[k] = parseFloat($(k).value); $(k + '-o').textContent = fmt[k](v[k]); }
+      const { eps, rho, phi, psi, T } = v;
+      const { g, e } = simulate(eps, rho, phi, psi, T);
+      const gT = g[T], eT = e[T], fT = Math.max(0, 1 - gT - eT);
+      $('r-g').textContent = gT.toFixed(3);
+      $('r-e').textContent = eT.toFixed(3);
+      $('r-f').textContent = fT.toFixed(3);
+      const h = halving(eps, rho, phi, psi);
+      $('r-half').textContent = h === null ? 'never' : h.toLocaleString('en-US');
+      $('r-zeta').textContent = eps + rho > 0 ? ((rho * phi + eps * psi) / (eps + rho)).toFixed(4) : (phi).toFixed(4);
+      $('r-plateau').textContent = eps + rho > 0 ? (rho / (eps + rho)).toFixed(3) : '1.000';
+
+      while (svg.lastChild && svg.lastChild.nodeName !== 'title') svg.removeChild(svg.lastChild);
+      const x = t => L + (W - L - R) * t / T;
+      const y = p => H - B - (H - Tp - B) * p;
+      for (let i = 0; i <= 4; i++) {
+        const p = i / 4;
+        el('line', { x1: L, x2: W - R, y1: y(p), y2: y(p), class: 'axis' });
+        el('text', { x: L - 6, y: y(p) + 4, 'text-anchor': 'end' }, p.toFixed(2));
+      }
+      for (let i = 0; i <= 5; i++) {
+        const t = Math.round(T * i / 5);
+        el('text', { x: x(t), y: H - B + 17, 'text-anchor': 'middle' }, t);
+      }
+      el('text', { x: (L + W - R) / 2, y: H - 1, 'text-anchor': 'middle' }, 'step t');
+      // Stacked areas: G at the bottom, E above it, F fills the rest.
+      const top = [], mid = [];
+      for (let t = 0; t <= T; t++) { mid.push([x(t), y(g[t])]); top.push([x(t), y(g[t] + e[t])]); }
+      const line = pts => pts.map((p, i) => (i ? 'L' : 'M') + p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join(' ');
+      const back = pts => pts.slice().reverse().map(p => 'L' + p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join(' ');
+      el('path', { d: `M${x(0)} ${y(1)} L${x(T)} ${y(1)} ` + back(top).replace(/^L/, 'L') + ' Z', fill: 'var(--rust)', opacity: .85 });
+      el('path', { d: line(top) + ' ' + back(mid) + ' Z', fill: 'var(--gold)', opacity: .9 });
+      el('path', { d: line(mid) + ` L${x(T)} ${y(0)} L${x(0)} ${y(0)} Z`, fill: 'var(--green)', opacity: .9 });
+      if (h !== null && h <= T) {
+        el('line', { x1: x(h), x2: x(h), y1: y(0), y2: y(1), stroke: '#fff', 'stroke-dasharray': '3 3', 'stroke-width': 1.2 });
+        el('text', { x: x(h) + 4, y: y(0.96), fill: '#fff' }, 'g = 0.5 at t = ' + h);
+      }
+    }
+
+    document.querySelectorAll('.presets button').forEach(btn => btn.addEventListener('click', () => {
+      const [eps, rho, phi, psi] = btn.dataset.p.split(',');
+      Object.entries({ eps, rho, phi, psi }).forEach(([k, val]) => { $(k).value = val; });
+      $('T').value = 40;
+      document.querySelectorAll('.presets button').forEach(b => b.setAttribute('aria-pressed', b === btn));
+      update();
+    }));
+    keys.forEach(k => $(k).addEventListener('input', () => {
+      document.querySelectorAll('.presets button').forEach(b => b.setAttribute('aria-pressed', 'false'));
+      update();
+    }));
+    update();
+  })();
+  </script>
+</body>
+</html>

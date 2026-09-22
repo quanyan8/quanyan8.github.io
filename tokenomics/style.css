@@ -122,6 +122,8 @@ section { padding: 4rem 0; border-bottom: 1px solid var(--rule); }
 .legend i { display: inline-block; width: 18px; height: 0; border-top: 2.5px solid; vertical-align: middle; margin-right: .35rem; }
 .formula { font-family: var(--mono); font-size: .88rem; background: var(--accent-soft); padding: .6rem .8rem; margin-top: 1rem; overflow-x: auto; white-space: nowrap; }
 
+.calc > * { min-width: 0; }
+
 /* Audience */
 .aud { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
 .aud div { border-top: 1.5px solid var(--ink); padding-top: .8rem; }
