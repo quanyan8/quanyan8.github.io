@@ -227,13 +227,64 @@
 
     <section id="contact">
       <h2>Contact</h2>
-      <p>Department of Electrical and Computer Engineering<br>
-        New York University Tandon School of Engineering<br>
-        370 Jay Street, Room 1004, Brooklyn, NY 11201</p>
-      <p>Email: <a href="mailto:qz494@nyu.edu">qz494@nyu.edu</a></p>
+      <div class="tabs" role="tablist" aria-label="Contact language">
+        <button type="button" role="tab" id="tab-en" aria-controls="contact-en" aria-selected="true">English</button>
+        <button type="button" role="tab" id="tab-ja" aria-controls="contact-ja" aria-selected="false" tabindex="-1" lang="ja">日本語</button>
+        <button type="button" role="tab" id="tab-fr" aria-controls="contact-fr" aria-selected="false" tabindex="-1" lang="fr">Français</button>
+      </div>
+
+      <div class="tab-panel" role="tabpanel" id="contact-en" aria-labelledby="tab-en">
+        <p>For research collaborations, speaking invitations, and inquiries about Ph.D., postdoctoral,
+          or visiting positions, please get in touch by email.</p>
+        <p>Department of Electrical and Computer Engineering<br>
+          New York University Tandon School of Engineering<br>
+          370 Jay Street, Room 1004, Brooklyn, NY 11201, USA</p>
+        <p>Email: <a href="mailto:qz494@nyu.edu">qz494@nyu.edu</a></p>
+      </div>
+
+      <div class="tab-panel" role="tabpanel" id="contact-ja" aria-labelledby="tab-ja" lang="ja" hidden>
+        <p>ニューヨーク大学 タンドン工学部 電気・コンピュータ工学科 准教授<br>
+          研究分野：ゲーム理論、エージェント型AI、サイバーレジリエンス、サイバーフィジカルシステム</p>
+        <p>共同研究、講演のご依頼、博士課程・ポスドク・客員研究員の受け入れに関するご相談は、メールにてお気軽にお問い合わせください。</p>
+        <p>所在地：<span lang="en">370 Jay Street, Room 1004, Brooklyn, NY 11201, USA</span><br>
+          メール：<a href="mailto:qz494@nyu.edu">qz494@nyu.edu</a></p>
+      </div>
+
+      <div class="tab-panel" role="tabpanel" id="contact-fr" aria-labelledby="tab-fr" lang="fr" hidden>
+        <p>Professeur agrégé, Département de génie électrique et informatique,
+          Tandon School of Engineering, Université de New York (NYU)<br>
+          Domaines de recherche : théorie des jeux, IA agentique, cyberrésilience et systèmes cyberphysiques</p>
+        <p>Pour toute proposition de collaboration, invitation à donner une conférence, ou demande
+          concernant un doctorat, un postdoctorat ou un séjour de recherche, n’hésitez pas à me
+          contacter par courriel.</p>
+        <p>Adresse : <span lang="en">370 Jay Street, Room 1004, Brooklyn, NY 11201, États-Unis</span><br>
+          Courriel : <a href="mailto:qz494@nyu.edu">qz494@nyu.edu</a></p>
+      </div>
     </section>
   </main>
 
   <footer class="wrap">© 2026 Quanyan Zhu</footer>
+  <script>
+    (function () {
+      const tabs = [...document.querySelectorAll('#contact [role="tab"]')];
+      function select(tab) {
+        for (const t of tabs) {
+          const on = t === tab;
+          t.setAttribute('aria-selected', on);
+          t.tabIndex = on ? 0 : -1;
+          document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+        }
+      }
+      tabs.forEach((t, i) => {
+        t.addEventListener('click', () => select(t));
+        t.addEventListener('keydown', e => {
+          const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+          if (!d) return;
+          const next = tabs[(i + d + tabs.length) % tabs.length];
+          select(next); next.focus();
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
