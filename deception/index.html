@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Game Theory for Deception | Cyber Deception Research at NYU</title>
+  <meta name="description" content="Learn how game theory models cyber deception: a primer, an interactive honeypot game, the six species of defensive deception, books, research and talks from Quanyan Zhu's group at NYU Tandon.">
+  <meta name="author" content="Quanyan Zhu">
+  <link rel="canonical" href="https://quanyan8.github.io/deception/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Game Theory for Deception">
+  <meta property="og:title" content="Game Theory for Deception | Cyber Deception Research at NYU">
+  <meta property="og:description" content="Learn how game theory models cyber deception: a primer, an interactive honeypot game, the six species of defensive deception, books, research and talks from Quanyan Zhu's group at NYU Tandon.">
+  <meta property="og:url" content="https://quanyan8.github.io/deception/">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23070D16'/%3E%3Cpath d='M8 9L24 12L15 24Z' fill='none' stroke='%235CC2F0' stroke-width='2'/%3E%3Ccircle cx='8' cy='9' r='3' fill='%235CC2F0'/%3E%3Ccircle cx='24' cy='12' r='3' fill='%235CC2F0'/%3E%3Ccircle cx='15' cy='24' r='3.4' fill='%23F2C94C'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"Game Theory for Deception","url":"https://quanyan8.github.io/deception/","description":"Research, tutorials and resources on game-theoretic cyber deception from NYU Tandon.","author":{"@type":"Person","@id":"https://quanyan8.github.io/#person","name":"Quanyan Zhu"}}
+  </script>
+</head>
+<body>
+<div id="top"></div>
+<nav class="topnav" aria-label="Site"><div class="wrap"><a class="brand" href="./">Game Theory <b>for Deception</b></a><div class="links"><a href="./#primer">Learn</a><a href="./#game">Play</a><a href="book.html">Book</a><a href="publications.html">Publications</a><a href="events.html">Events</a></div></div></nav>
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <canvas id="net" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <p class="eyebrow">NYU Tandon · Game Theory for Deception</p>
+    <h1><span>Deception is</span><span>a strategy.</span><span>We model it as <span class="u">a game</span>.</span></h1>
+    <p class="lede">Attackers lie to get in; defenders lie to catch them. We use <b>game theory</b> to understand who knows what, what each side believes, and how to design deception that works, from honeypots to AI agents.</p>
+    <div class="ctas">
+      <a class="btn primary" href="#primer">Start learning →</a>
+      <a class="btn ghost" href="#game">Play the honeypot game</a>
+      <a class="btn ghost" href="#books">Books &amp; research</a>
+    </div>
+    <div class="hero-facts">
+      <span><b>5</b> books &amp; edited volumes</span>
+      <span><b>6</b> species of defensive deception</span>
+      <span><b>2017 – 2026</b> of published research</span>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ============ PRIMER ============ -->
+<section id="primer">
+  <div class="wrap primer-grid">
+    <div class="primer-text">
+      <p class="eyebrow">Primer · What is cyber deception?</p>
+      <h2>Winning with information the other side doesn’t have</h2>
+      <p>Every cyber attack is a contest over information. Attackers hide malware, spoof identities and send phishing emails. Defenders can turn the same idea around: decoy servers, fake credentials and shifting network addresses make an attacker waste time, reveal their tools, or give up.</p>
+      <p class="pull">Deception works only if the other side believes it, and they are strategic too.</p>
+      <p>That is why we use <strong>game theory</strong>. A game lets us write down what each player knows, what they want, and how they update their beliefs when they see evidence. We can then ask the design questions that matter: How many decoys are enough? What if the attacker can partly detect them? When should a defender reveal, conceal, or commit?</p>
+    </div>
+    <aside class="glossary" aria-label="Key terms">
+      <h3>Key terms</h3>
+      <dl>
+        <dt>Signaling game</dt>
+        <dd>One player has private information (for example, “this server is a honeypot”) and sends signals; the other must act on what they believe.</dd>
+        <dt>Bayesian belief · μ</dt>
+        <dd>A player’s probability estimate of the hidden truth, updated by Bayes’ rule as evidence arrives.</dd>
+        <dt>Stackelberg commitment</dt>
+        <dd>The defender moves first and commits to a strategy; the attacker observes it and best-responds.</dd>
+        <dt>Leaky deception</dt>
+        <dd>Deception that can be partly detected. Evidence “leaks” and the attacker may see through it.</dd>
+        <dt>Honey-X</dt>
+        <dd>Honeypots, honeytokens, honey-files: decoys built to attract and observe attackers.</dd>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ TAXONOMY ============ -->
+<section class="taxo" id="taxonomy">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">A field guide</p>
+      <h2>Six species of defensive deception</h2>
+      <p class="lede">Our taxonomy groups defensive deception by the kind of information it manipulates and the game that models it. It gives researchers and practitioners a shared vocabulary.</p>
+    </div>
+    <div class="species">
+      <article class="sp"><p class="tag">Species <i>Perturbation</i></p><h3>Perturbation</h3><p>Add noise to data or outputs so an observer cannot learn the true values.</p><p class="ex"><b>e.g.</b>Differential privacy on released statistics</p></article>
+      <article class="sp"><p class="tag">Species <i>MTD</i></p><h3>Moving target defense</h3><p>Keep changing the system’s configuration so the attacker’s reconnaissance quickly goes stale.</p><p class="ex"><b>e.g.</b>Randomized IP addresses and ports</p></article>
+      <article class="sp"><p class="tag">Species <i>Obfuscation</i></p><h3>Obfuscation</h3><p>Hide real signals among useless or misleading ones.</p><p class="ex"><b>e.g.</b>Dummy queries that mask a user’s location</p></article>
+      <article class="sp"><p class="tag">Species <i>Mixing</i></p><h3>Mixing</h3><p>Exchange identities among many parties so no single one can be traced.</p><p class="ex"><b>e.g.</b>Mix networks for anonymous communication</p></article>
+      <article class="sp"><p class="tag">Species <i>Honey-X</i></p><h3>Honey-X</h3><p>Make fake systems or data look real to lure and study attackers.</p><p class="ex"><b>e.g.</b>Honeypots, honeytokens, honey-files</p></article>
+      <article class="sp"><p class="tag">Species <i>Engagement</i></p><h3>Attacker engagement</h3><p>Use feedback over time to keep an attacker busy and learn their goals.</p><p class="ex"><b>e.g.</b>Adaptive honeynets that observe advanced persistent threats</p></article>
+    </div>
+    <p class="cite">From J. Pawlick, E. Colbert &amp; Q. Zhu, “<a href="https://doi.org/10.1145/3337772">A Game-theoretic Taxonomy and Survey of Defensive Deception for Cybersecurity and Privacy</a>,” <i>ACM Computing Surveys</i> 52(4), 2019.</p>
+  </div>
+</section>
+
+<!-- ============ GAME ============ -->
+<section id="game">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Interactive · Try it yourself</p>
+      <h2>The leaky honeypot game</h2>
+      <p class="lede">You defend a network of 100 hosts. Some are honeypots. An attacker scans one host and sees whether it <em>looks real</em>. Adjust your defense and watch the attacker’s belief and decision change.</p>
+    </div>
+    <div class="game">
+      <div class="controls">
+        <div class="ctl">
+          <label for="p">Honeypot share <output id="pOut">30%</output></label>
+          <input type="range" id="p" min="0" max="90" value="30" step="1">
+          <small>The fraction of hosts that are decoys. Decoys cost money to run.</small>
+        </div>
+        <div class="ctl">
+          <label for="q">Leakiness <output id="qOut">40%</output></label>
+          <input type="range" id="q" min="0" max="95" value="40" step="1">
+          <small>How often the attacker’s scan correctly spots a honeypot as fake. Better decoys leak less.</small>
+        </div>
+        <div class="ctl">
+          <label for="g">Attack payoff ratio <output id="gOut">2.0 : 1</output></label>
+          <input type="range" id="g" min="2" max="40" value="20" step="1">
+          <small>Gain from hitting a real host versus the loss from being caught in a honeypot.</small>
+        </div>
+      </div>
+      <div class="board" aria-live="polite">
+        <div class="hosts" id="hosts" aria-hidden="true"></div>
+        <div class="legend">
+          <span><i style="background:#1E4C6B"></i>Real host</span>
+          <span><i style="background:#1B2B40;box-shadow:inset 0 0 0 2px #F2C94C"></i>Honeypot that looks real</span>
+          <span><i style="background:#4A3510"></i>Honeypot the scan exposes</span>
+        </div>
+        <div class="readout">
+          <div class="metric"><span class="k">Attacker’s belief · μ</span><span class="v" id="mu">—</span><span class="f">P(honeypot | looks real)</span></div>
+          <div class="metric"><span class="k">Expected attack value</span><span class="v" id="ev">—</span><span class="f">(1−μ)·gain − μ·loss</span></div>
+          <p class="verdict" id="verdict"></p>
+        </div>
+        <p class="game-note">A simplified version of the signaling games with evidence in <a href="https://doi.org/10.1109/TIFS.2018.2886472">Pawlick, Colbert &amp; Zhu, IEEE TIFS 2019</a>. The full model also lets the defender choose <em>when</em> to deceive and at what cost.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LEARNING PATH ============ -->
+<section id="learn" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">New to the field?</p>
+      <h2>A four-step reading path</h2>
+      <p class="lede">For students and practitioners: start short and free, then go deep.</p>
+    </div>
+    <div class="path">
+      <div class="step"><h3>The tutorial</h3><p>A short, free introduction to game theory for cyber deception. Read it in an afternoon.</p><span class="meta">HoTSoS 2019 · arXiv</span><a class="go" href="https://arxiv.org/abs/1903.01442">Read the tutorial →</a></div>
+      <div class="step"><h3>The survey</h3><p>The six-species taxonomy and a map of the game models behind each species.</p><span class="meta">ACM Computing Surveys 2019</span><a class="go" href="https://arxiv.org/abs/1712.05441">Read the survey →</a></div>
+      <div class="step"><h3>The textbook</h3><p>Nash and Stackelberg games, incomplete information, honeypots, and strategic trust in the IoT.</p><span class="meta">Birkhäuser 2021</span><a class="go" href="https://doi.org/10.1007/978-3-030-66065-9">Open the book →</a></div>
+      <div class="step"><h3>The frontier</h3><p>Deception by and against AI: LLM agents, agentic workflows, and spear-phishing.</p><span class="meta">GameSec 2025 · arXiv 2025</span><a class="go" href="https://arxiv.org/abs/2507.10621">Read the overview →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BOOKS ============ -->
+<section class="shelf-sec" id="books">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Books</p>
+      <h2>The bookshelf</h2>
+      <p class="lede">Monographs and edited volumes that define the game-theoretic study of deception.</p>
+    </div>
+    <div class="feature">
+      <div class="cover c1">
+        <svg viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="#1A1400" stroke-width="2"><circle cx="20" cy="20" r="6"/><circle cx="80" cy="30" r="6"/><circle cx="50" cy="80" r="6"/><path d="M20 20L80 30L50 80Z"/></g></svg>
+        <span class="cp">Birkhäuser · 2021</span>
+        <span class="ct">Game Theory for Cyber Deception</span>
+        <span class="ca">Jeffrey Pawlick<br>Quanyan Zhu</span>
+      </div>
+      <div>
+        <p class="eyebrow" style="color:var(--signal)">Featured monograph</p>
+        <h3>Game Theory for Cyber Deception: From Theory to Applications</h3>
+        <p>Draws on a decade of deception research to build a game-theoretic taxonomy, then applies it to privacy in the Internet of Things, dynamic honeynets against advanced persistent threats, and active defense against physical denial-of-service attacks.</p>
+        <ul>
+          <li>For security practitioners who want to learn game theory</li>
+          <li>For game theorists moving into cybersecurity</li>
+          <li>Covers signaling, Stackelberg, and large-population games</li>
+        </ul>
+        <div class="ctas">
+          <a class="btn primary" href="https://doi.org/10.1007/978-3-030-66065-9">Read on SpringerLink</a>
+          <a class="btn ghost" href="book.html">Chapter guide</a>
+        </div>
+      </div>
+    </div>
+    <div class="books">
+      <a class="book" href="https://doi.org/10.1007/978-3-031-93867-2">
+        <div class="cover c2"><span class="cp">Springer · 2026</span><span class="ct">Foundations of Cyber Deception</span><span class="ca">Eds. Q. Zhu, Z. Lu,<br>P. L. Yu, C. Wang</span></div>
+        <p class="bm"><b>Foundations of Cyber Deception</b>Modeling, analysis, design, human factors, and how they fit together.</p>
+      </a>
+      <a class="book" href="https://doi.org/10.1007/978-3-031-30709-6">
+        <div class="cover c3"><span class="cp">SpringerBriefs · 2023</span><span class="ct">Cognitive Security</span><span class="ca">Linan Huang<br>Quanyan Zhu</span></div>
+        <p class="bm"><b>Cognitive Security</b>A system-scientific approach to human attention, bias, and deception.</p>
+      </a>
+      <a class="book" href="https://doi.org/10.1002/9781119723950">
+        <div class="cover c4"><span class="cp">Wiley-IEEE · 2021</span><span class="ct">Game Theory &amp; Machine Learning for Cyber Security</span><span class="ca">Eds. Kamhoua, Kiekintveld,<br>Fang, Zhu</span></div>
+        <p class="bm"><b>Game Theory and Machine Learning for Cyber Security</b>Includes chapters on manipulating reinforcement learning.</p>
+      </a>
+      <a class="book" href="https://doi.org/10.1002/9781394215416">
+        <div class="cover c5"><span class="cp">Wiley · 2026</span><span class="ct">Autonomous Cyber Resilience</span><span class="ca">Eds. Kamhoua, Kott,<br>Zhu, Leslie</span></div>
+        <p class="bm"><b>Autonomous Cyber Resilience</b>Includes resilience against deceptive information attacks on transportation systems.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THEMES ============ -->
+<section id="research">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Research</p>
+      <h2>What we work on</h2>
+      <p class="lede">Six research threads, each with a few papers to start from. The full list is on the <a href="publications.html">Publications</a> page.</p>
+    </div>
+    <div class="themes">
+      <article class="theme">
+        <header><h3>Signaling &amp; Bayesian deception</h3></header>
+        <p>How beliefs are formed and manipulated when one side holds private information and evidence can leak.</p>
+        <ul>
+          <li><a href="https://doi.org/10.1109/TIFS.2018.2886472">Modeling and Analysis of Leaky Deception Using Signaling Games With Evidence</a><span>Pawlick, Colbert, Zhu · IEEE TIFS 2019</span></li>
+          <li><a href="https://doi.org/10.1007/978-3-030-01554-1_31">Hypothesis Testing Game for Cyber Deception</a><span>Zhang, Zhu · GameSec 2018</span></li>
+        </ul>
+      </article>
+      <article class="theme">
+        <header><h3>Honeypots &amp; attacker engagement</h3></header>
+        <p>When to lure, how long to engage, and how to learn from an attacker without being found out.</p>
+        <ul>
+          <li><a href="https://doi.org/10.1007/978-3-030-32430-8_13">Adaptive Honeypot Engagement Through Reinforcement Learning of Semi-Markov Decision Processes</a><span>Huang, Zhu · GameSec 2019</span></li>
+          <li><a href="https://doi.org/10.1109/TIFS.2021.3118886">Duplicity Games for Deception Design With an Application to Insider Threat Mitigation</a><span>Huang, Zhu · IEEE TIFS 2021</span></li>
+        </ul>
+      </article>
+      <article class="theme">
+        <header><h3>Deception in AI &amp; LLM agents</h3><span class="new">New</span></header>
+        <p>Game-theoretic models of deception by and against language models and agentic AI workflows.</p>
+        <ul>
+          <li><a href="https://doi.org/10.1007/978-3-032-08064-6_18">Generative-Conjectural LLM Equilibrium for Agentic AI Deception with Applications to Spearphishing</a><span>Zhu · GameSec 2025</span></li>
+          <li><a href="https://doi.org/10.1007/978-3-032-08067-7_12">A Gestalt Game-Theoretic Framework for Designing Agentic AI Workflows in Cyber Deception</a><span>Al Bari, Zhu · 2025</span></li>
+        </ul>
+      </article>
+      <article class="theme">
+        <header><h3>Cognitive security &amp; phishing</h3><span class="new">New</span></header>
+        <p>Human attention and bias are part of the attack surface. We design defenses that account for them.</p>
+        <ul>
+          <li><a href="https://doi.org/10.1109/TIFS.2022.3189530">ADVERT: An Adaptive and Data-Driven Attention Enhancement Mechanism for Phishing Prevention</a><span>Huang, Jia, Balcetis, Zhu · IEEE TIFS 2022</span></li>
+          <li><a href="https://arxiv.org/abs/2508.20963">GAMBiT Experiments: Revealing Cognitive Bias in Human-Subjects Red-Team Cyber Range Operations</a><span>Beltz et al. · arXiv 2025</span></li>
+        </ul>
+      </article>
+      <article class="theme">
+        <header><h3>Advanced persistent threats &amp; moving targets</h3></header>
+        <p>Multi-stage attackers who stay hidden for months, and defenses that keep moving.</p>
+        <ul>
+          <li><a href="https://doi.org/10.1016/j.cose.2019.101660">A Dynamic Games Approach to Proactive Defense Strategies against Advanced Persistent Threats in Cyber-Physical Systems</a><span>Huang, Zhu · Computers &amp; Security 2020</span></li>
+          <li><a href="https://doi.org/10.1007/978-3-319-68711-7_15">Manipulating Adversary’s Belief: A Dynamic Game Approach to Deception by Design</a><span>Horák, Zhu, Bošanský · GameSec 2017</span></li>
+        </ul>
+      </article>
+      <article class="theme">
+        <header><h3>Cyber-physical &amp; robotic deception</h3></header>
+        <p>Deception that moves through the physical world: drones, vehicles, robots, and navigation systems.</p>
+        <ul>
+          <li><a href="https://doi.org/10.1109/TASE.2021.3097286">A Dynamic Game Framework for Rational and Persistent Robot Deception</a><span>Huang, Zhu · IEEE T-ASE 2022</span></li>
+          <li><a href="https://doi.org/10.1007/978-3-319-68711-7_12">Strategic Defense Against Deceptive Civilian GPS Spoofing of Unmanned Aerial Vehicles</a><span>Zhang, Zhu · GameSec 2017</span></li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EVENTS & RESOURCES ============ -->
+<section id="events" style="padding-top:0">
+  <div class="wrap events-grid">
+    <div>
+      <div class="sec-head" style="margin-bottom:28px">
+        <p class="eyebrow">Talks &amp; events</p>
+        <h2>Where we’ve presented</h2>
+      </div>
+      <ol class="timeline" reversed>
+        <li><time datetime="2026-06">Jun 2026</time><div><p class="t">Human-Aware AI Agents for the Cyber Battlefield</p><p class="d">AAAI Summer Symposium, Seoul, organizing committee · <a href="https://sites.google.com/view/suss26-ai-agents-for-cyber/home">Symposium site</a></p></div></li>
+        <li><time datetime="2025-02-26">Feb 2025</time><div><p class="t">Dynamic Games for Cyber Deception</p><p class="d">Seminar, Oden Institute, UT Austin · <a href="https://oden.utexas.edu/news-and-events/events/2042---Quanyan%20Zhu/">Event page</a></p></div></li>
+        <li><time datetime="2023">2023</time><div><p class="t">Bayesian Persuasion and Cognitive Security</p><p class="d">Midwest Workshop on Control and Game Theory, University of Minnesota · <a href="https://mwcgt2023.umn.edu/quanyan-zhu">Talk page</a></p></div></li>
+        <li><time datetime="2020-02-08">Feb 2020</time><div><p class="t">AAAI-20 Workshop on AI for Cyber Security (AICS)</p><p class="d">New York City</p></div></li>
+        <li><time datetime="2019-04">Apr 2019</time><div><p class="t">Tutorial: Game Theory for Cyber Deception</p><p class="d">HoTSoS, Nashville · <a href="https://arxiv.org/abs/1903.01442">Tutorial paper</a></p></div></li>
+      </ol>
+      <p class="cite"><a href="events.html">All talks, workshops and tutorials →</a></p>
+    </div>
+    <div class="resources">
+      <p class="eyebrow" style="margin-bottom:4px">Open resources</p>
+      <a class="res" href="https://doi.org/10.1016/j.dib.2026.112476"><span class="k">Dataset · 2026</span><b>GAMBiT red-team datasets</b><span>Human-subjects cyber-range data for studying attacker cognitive bias.</span></a>
+      <a class="res" href="https://www.youtube.com/watch?v=IXKsgZn5Spg"><span class="k">Video</span><b>Conversations at the Forefront of Cybersecurity</b><span>NYU CCS interview with Quanyan Zhu.</span></a>
+      <a class="res" href="https://arxiv.org/abs/2302.13362"><span class="k">Essay · 2023</span><b>The Doctrine of Cyber Effect</b><span>An ethics framework for defensive cyber deception.</span></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div>
+      <h2>Is your work missing?</h2>
+      <p>This site gathers research, tutorials and workshops on deception games. Send us your paper, course or event and we’ll add it.</p>
+    </div>
+    <a class="btn" href="mailto:qz494@nyu.edu?subject=Deception%20games%20submission">Submit your work</a>
+  </div>
+</section>
+<footer class="mini"><div class="wrap"><span>Game Theory for Deception · <a href="https://quanyan8.github.io/">Quanyan Zhu</a> · NYU Tandon School of Engineering</span><a href="#top">Back to top ↑</a></div></footer>
+<script>/* ---------- hero network ---------- */
+(function(){
+  const c=document.getElementById('net'),x=c.getContext('2d');
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let W,H,pts=[],dpr=Math.min(devicePixelRatio||1,2);
+  function init(){
+    W=c.clientWidth;H=c.clientHeight;c.width=W*dpr;c.height=H*dpr;x.setTransform(dpr,0,0,dpr,0,0);
+    const n=Math.round(Math.min(140,W*H/9000));pts=[];
+    for(let i=0;i<n;i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.25,d:Math.random()<.12});
+  }
+  function draw(){
+    x.clearRect(0,0,W,H);
+    for(let i=0;i<pts.length;i++){const a=pts[i];
+      for(let j=i+1;j<pts.length;j++){const b=pts[j],dx=a.x-b.x,dy=a.y-b.y,d=dx*dx+dy*dy;
+        if(d<13000){x.strokeStyle='rgba(92,194,240,'+(0.32*(1-d/13000))+')';x.lineWidth=1;x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke();}}}
+    for(const p of pts){x.fillStyle=p.d?'#F2C94C':'rgba(140,210,245,.85)';x.beginPath();x.arc(p.x,p.y,p.d?2.6:1.6,0,7);x.fill();}
+  }
+  function step(){for(const p of pts){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;}draw();if(!reduce)requestAnimationFrame(step);}
+  init();step();addEventListener('resize',()=>{init();if(reduce)draw();});
+})();
+
+/* ---------- leaky honeypot game ---------- */
+(function(){
+  const $=id=>document.getElementById(id);
+  const hosts=$('hosts');
+  const cells=[];for(let i=0;i<100;i++){const d=document.createElement('div');d.className='host';hosts.appendChild(d);cells.push(d);}
+  // fixed shuffle so the board changes smoothly as sliders move
+  const order=[...Array(100).keys()];let s=7;for(let i=99;i>0;i--){s=(s*9301+49297)%233280;const j=Math.floor(s/233280*(i+1));[order[i],order[j]]=[order[j],order[i]];}
+  function update(){
+    const p=+$('p').value/100,q=+$('q').value/100,G=+$('g').value/10,L=1;
+    $('pOut').textContent=Math.round(p*100)+'%';$('qOut').textContent=Math.round(q*100)+'%';$('gOut').textContent=G.toFixed(1)+' : 1';
+    const nH=Math.round(p*100),nFlag=Math.round(nH*q);
+    order.forEach((idx,k)=>{const el=cells[idx];el.className='host '+(k<nH?('hp'+(k<nFlag?' flag':'')):'real');});
+    const denom=p*(1-q)+(1-p);
+    const mu=denom>0?p*(1-q)/denom:0;
+    const ev=(1-mu)*G-mu*L;
+    $('mu').textContent=(mu*100).toFixed(1)+'%';
+    $('ev').textContent=(ev>=0?'+':'−')+Math.abs(ev).toFixed(2);
+    const v=$('verdict');
+    // share of honeypots needed to deter at this leakiness: mu* = G/(G+L)
+    const muStar=G/(G+L);
+    const need=muStar/(muStar+(1-q)*(1-muStar)); // p such that mu = muStar
+    if(ev<0){v.className='verdict deter';v.innerHTML='<b>Attack deterred</b>A host that looks real is too likely to be a trap, so a rational attacker walks away.';}
+    else{v.className='verdict attack';v.innerHTML='<b>Attacker proceeds</b>'+(q>=.999?'Every decoy is exposed, so deception has no effect.':'To deter this attacker you need about <strong>'+Math.min(100,Math.ceil(need*100))+'%</strong> honeypots at this leakiness, or better decoys.');}
+  }
+  ['p','q','g'].forEach(id=>$(id).addEventListener('input',update));update();
+})();
+</script>
+</body>
+</html>
