@@ -76,9 +76,6 @@ section:last-of-type { border-bottom: 0; }
 .btn:hover { border-color: var(--accent); text-decoration: none; }
 .btn.primary { background: var(--accent); color: var(--bg); border-color: var(--accent); }
 
-.stats { display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 1.6rem; }
-.stat b { display: block; font-family: var(--serif); font-size: 1.6rem; color: var(--accent); }
-.stat span { font-size: .82rem; color: var(--muted); }
 
 /* Content blocks */
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 2.5rem; }
@@ -90,10 +87,6 @@ section:last-of-type { border-bottom: 0; }
 
 ul.plain { padding-left: 1.1rem; margin: .3rem 0; }
 ul.plain li { margin: .3rem 0; }
-.news { list-style: none; padding: 0; margin: 0; }
-.news li { display: grid; grid-template-columns: 90px 1fr; gap: 1rem; padding: .55rem 0; border-bottom: 1px dashed var(--rule); }
-.news li:last-child { border-bottom: 0; }
-.news time { color: var(--muted); font-size: .88rem; font-variant-numeric: tabular-nums; }
 
 .books { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 1rem; }
 .book { background: var(--surface); border: 1px solid var(--rule); border-left: 4px solid var(--accent); border-radius: 8px; padding: .9rem 1rem; }
@@ -133,6 +126,21 @@ ol.publist li[hidden] { display: none; }
   .hero h1 { font-size: 2rem; }
   .grid-2 { grid-template-columns: 1fr; }
   .nav-links { margin-left: 0; gap: .8rem; }
-  .news li { grid-template-columns: 1fr; gap: 0; }
   ol.publist li { grid-template-columns: 1fr; gap: 0; }
+}
+
+/* Sample-chapter manuscripts */
+.samples { display: grid; gap: 1.25rem; }
+.sample {
+  display: grid; grid-template-columns: 150px 1fr; gap: 1.5rem; align-items: start;
+  background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 1.25rem;
+}
+.sample img { width: 150px; height: auto; display: block; border-radius: 4px; box-shadow: 0 2px 10px rgba(0,0,0,.15); }
+.sample .t { display: block; font-family: var(--serif); font-weight: 600; font-size: 1.15rem; color: var(--text); line-height: 1.35; }
+.sample .m { display: block; color: var(--muted); font-size: .88rem; margin: .2rem 0 0; }
+.sample p { margin: .6rem 0 0; font-size: .95rem; }
+.sample .btn { margin-top: .9rem; }
+@media (max-width: 720px) {
+  .sample { grid-template-columns: 96px 1fr; gap: 1rem; padding: 1rem; }
+  .sample img { width: 96px; }
 }
