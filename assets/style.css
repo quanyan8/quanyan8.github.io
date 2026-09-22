@@ -156,3 +156,15 @@ ol.publist li[hidden] { display: none; }
 .tabs button:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; border-radius: 4px; }
 .tab-panel p { max-width: 68ch; }
 :lang(ja) { font-family: var(--sans), "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif; line-height: 1.8; }
+
+/* Deception project spotlight */
+.spotlight {
+  display: grid; gap: .35rem; margin-top: 1.5rem; padding: 1.4rem 1.5rem;
+  border-radius: 10px; background: #0b1624; color: #eaf2fa; border-left: 5px solid #f2c94c;
+}
+.spotlight:hover { text-decoration: none; background: #10203a; }
+.spotlight .k { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: #f2c94c; }
+.spotlight .t { font-family: var(--serif); font-size: 1.35rem; font-weight: 600; color: #ffffff; }
+.spotlight .d { color: #b3c2d3; max-width: 70ch; font-size: .95rem; }
+.spotlight .go { color: #8cc9f0; font-weight: 600; font-size: .92rem; margin-top: .2rem; }
+.spotlight:focus-visible { outline: 3px solid #f2c94c; outline-offset: 3px; }
