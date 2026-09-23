@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cognitive Security: A Systems Science of Cognitive Defense and Resilience</title>
+  <meta name="description" content="Cognitive Security, a book by Ya-Ting Yang, Linan Huang and Quanyan Zhu: a systems science of cognitive defense and resilience. Frameworks, an interactive resilience lab, free sample chapters, and the research behind them.">
+  <meta name="author" content="Ya-Ting Yang, Linan Huang, Quanyan Zhu">
+  <meta name="theme-color" content="#1b1232">
+  <link rel="canonical" href="https://quanyan8.github.io/cognitive-security/">
+  <meta property="og:type" content="book">
+  <meta property="og:site_name" content="Quanyan Zhu">
+  <meta property="og:title" content="Cognitive Security: A Systems Science of Cognitive Defense and Resilience">
+  <meta property="og:description" content="Human and machine cognition as a security frontier: frameworks, metrics, an interactive resilience lab, and free sample chapters.">
+  <meta property="og:url" content="https://quanyan8.github.io/cognitive-security/">
+  <meta property="og:image" content="https://quanyan8.github.io/assets/books/cognitive-security-cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%231b1232'/%3E%3Ccircle cx='11' cy='16' r='5' fill='none' stroke='%235fd39b' stroke-width='2'/%3E%3Cpath d='M21 11h6M21 16h6M21 21h6' stroke='%2356c8e8' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='2.4' fill='%23f0ae3c'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    "name": "Cognitive Security: A Systems Science of Cognitive Defense and Resilience",
+    "author": [
+      {"@type": "Person", "name": "Ya-Ting Yang"},
+      {"@type": "Person", "name": "Linan Huang"},
+      {"@type": "Person", "@id": "https://quanyan8.github.io/#person", "name": "Quanyan Zhu", "url": "https://quanyan8.github.io/"}
+    ],
+    "publisher": {"@type": "Organization", "name": "Springer"},
+    "url": "https://quanyan8.github.io/cognitive-security/",
+    "image": "https://quanyan8.github.io/assets/books/cognitive-security-cover.png",
+    "inLanguage": "en",
+    "about": ["Cognitive security", "Human factors in security", "Cyber deception", "Misinformation", "Human-AI teaming", "Resilience", "Game theory"],
+    "workExample": {"@type": "Book", "name": "Cognitive Security: sample chapters (Part I)", "url": "https://quanyan8.github.io/assets/books/cognitive-security-sample.pdf", "bookFormat": "https://schema.org/EBook", "isAccessibleForFree": true}
+  }
+  </script>
+</head>
+<body>
+  <nav class="nav" aria-label="Site"><div class="wrap">
+    <a class="brand" href="./">Cognitive <span>Security</span></a>
+    <div class="links">
+      <a href="#why">Why</a>
+      <a href="#frameworks">Frameworks</a>
+      <a href="#lab">Resilience lab</a>
+      <a href="#parts">The book</a>
+      <a href="#research">Research</a>
+      <a href="../">Quanyan Zhu ↗</a>
+    </div>
+  </div></nav>
+
+  <header class="hero"><div class="wrap grid">
+    <div>
+      <p class="label"><b>A book</b> · Springer, forthcoming</p>
+      <h1>Cognitive <em>Security</em></h1>
+      <p class="sub">A Systems Science of Cognitive Defense and Resilience</p>
+      <p class="by">Ya-Ting Yang (National Taiwan University) · Linan Huang (Tsinghua University) · Quanyan Zhu (New York University)</p>
+      <p class="lede">Attacks increasingly target what people and machines perceive, believe, and decide, rather than the
+        systems they run on. A deepfake call authorizes a payment; a flood of alerts exhausts an analyst's attention; a
+        false post spreads faster than a correction; an injected instruction redirects an AI agent. This book treats
+        cognition as an engineered layer of a socio-technical system, with vulnerabilities that can be modeled,
+        measured, and defended.</p>
+      <div class="btns">
+        <a class="btn primary" href="../assets/books/cognitive-security-sample.pdf">Read the sample chapters (PDF)</a>
+        <a class="btn" href="#lab">Try the resilience lab</a>
+        <a class="btn" href="#parts">What's in the book</a>
+      </div>
+      <div class="facts">
+        <div><b>7</b><span>parts</span></div>
+        <div><b>5</b><span>levels, from individual to society</span></div>
+        <div><b>150</b><span>pages in the free sample</span></div>
+      </div>
+    </div>
+    <a class="cover" href="../assets/books/cognitive-security-sample.pdf"><img src="../assets/books/cognitive-security-cover.png" alt="Cover of Cognitive Security by Ya-Ting Yang, Linan Huang and Quanyan Zhu" width="420" height="600"></a>
+  </div></header>
+
+  <main>
+    <section id="why" class="band"><div class="wrap">
+      <div class="sec-head">
+        <span class="label">Beyond the weakest link</span>
+        <h2>From data security to decision security</h2>
+        <p>“The human is the weakest link” has too often served as a conclusion rather than the beginning of an
+          analysis. These incidents share a structure: no firewall rule failed, and the decisive failure was a decision.</p>
+      </div>
+      <div class="cards">
+        <div class="card"><span class="k">Deepfake payment fraud</span><h3>A meeting of synthetic colleagues</h3><p>A finance employee joins a video conference, sees and hears the chief financial officer, and executes a series of transfers. The colleagues were synthetic, and the firm stated its internal systems were not compromised.</p></div>
+        <div class="card"><span class="k">Attention as a target</span><h3>Alerts that exhaust the analyst</h3><p>An informational denial-of-service attack floods a security operations center, so that real incidents cannot be triaged inside the deadline. Nothing is breached; the defender simply runs out of attention.</p></div>
+        <div class="card"><span class="k">Injected instruction</span><h3>An agent told what to believe</h3><p>An AI assistant reads untrusted content that carries instructions for it. The manipulation enters through the model's input, not through its permissions.</p></div>
+      </div>
+      <p class="pull">A vulnerability that is attributed to people, and left there, cannot be engineered.</p>
+    </div></section>
+
+    <section id="scenario"><div class="wrap">
+      <div class="sec-head">
+        <span class="label">The running example</span>
+        <h2>MERIDIAN, one winter night</h2>
+        <p>A notional regional utility carries the models through the book, so that chapters can be compared in one
+          setting. It is a teaching construct, not a real organization.</p>
+      </div>
+      <div class="scenario">
+        <span class="k">MERIDIAN · electricity and water for 2.0 million residents</span>
+        <h3>A storm, a payment request, and a rumor</h3>
+        <p>A storm cuts power to 310,000 customers. Within the hour the security operations center queue triples and the
+          call center is saturated. A message that appears to come from the chief financial officer asks the finance office
+          to expedite an emergency payment to a restoration contractor. At the same time, a post claiming the tap water is
+          unsafe begins to circulate among the utility's 240,000 social media followers.</p>
+        <p>No firewall rule fails and no server is compromised. Whether MERIDIAN serves its customers well that night
+          depends on what its analysts notice, what its finance staff believe, what its AI copilot recommends, and what the
+          public trusts.</p>
+      </div>
+    </div></section>
+
+    <section id="frameworks" class="band"><div class="wrap">
+      <div class="sec-head">
+        <span class="label">The frameworks</span>
+        <h2>Where a cognitive attack lands</h2>
+        <p>Every problem in the book has an address: a level of the Cognitive Security Stack, a stage of the cognitive
+          loop, and a phase of resilience. Together they form the Cognitive Security Cube, which shows at a glance which
+          cells your controls cover and which are empty.</p>
+      </div>
+      <div class="fw">
+        <div class="grid-wrap">
+          <table class="stack">
+            <caption class="label" style="text-align:left;padding-bottom:.5rem">Level × stage, with three incidents placed</caption>
+            <thead><tr><th class="lv">Level</th><th>Sense</th><th>Model</th><th>Decide</th><th>Act</th><th>Learn</th></tr></thead>
+            <tbody>
+              <tr><th class="lv">L5 Society</th><td></td><td class="hot"><span>B</span></td><td></td><td></td><td></td></tr>
+              <tr><th class="lv">L4 Organization</th><td></td><td></td><td></td><td class="hot"><span>A</span></td><td></td></tr>
+              <tr><th class="lv">L3 Human–AI team</th><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><th class="lv">L2 AI agent</th><td></td><td class="hot"><span>C</span></td><td></td><td></td><td></td></tr>
+              <tr><th class="lv">L1 Individual</th><td></td><td></td><td></td><td></td><td></td></tr>
+            </tbody>
+          </table>
+          <p class="lab-note">A: deepfake payment fraud, at the organization's Act stage. B: a false official post, at society's
+            Model stage. C: an injected instruction, at the agent's Model stage. Each cell also carries a resilience phase.</p>
+        </div>
+        <div>
+          <h3>The four phases of resilience</h3>
+          <div class="phases">
+            <span class="phase"><b>Anticipate</b> · before onset</span>
+            <span class="phase"><b>Withstand</b> · until detected</span>
+            <span class="phase"><b>Recover</b> · until restored</span>
+            <span class="phase"><b>Adapt</b> · a new level</span>
+          </div>
+          <h3 style="margin-top:1.5rem">What the frameworks buy you</h3>
+          <ul>
+            <li><b>A unit of analysis</b> above the individual: manipulation propagates across people, teams, agents, organizations, and society.</li>
+            <li><b>A coverage map:</b> placing controls in the Cube exposes cells with no control at all.</li>
+            <li><b>A measurable objective:</b> decision quality <i>Q(t)</i> over time, rather than awareness or click rates alone.</li>
+            <li><b>A strategic adversary:</b> attacker and defender act on predictions about each other, so defenses are designed against adaptation, not a fixed attack.</li>
+          </ul>
+        </div>
+      </div>
+    </div></section>
+
+    <section id="lab"><div class="wrap">
+      <div class="sec-head">
+        <span class="label">Interactive · Chapter 4, Definition 4.10</span>
+        <h2>The resilience curve</h2>
+        <p>A single measurement of decision quality describes a moment; security concerns trajectories. Drag the sliders to
+          shape an incident at MERIDIAN's operations center and watch the resilience functional respond. Time to detect
+          splits into <em>time to alert</em>, how fast the defender senses, and <em>time to act</em>, how fast it decides,
+          so an alert raised quickly and acted on slowly shows up as a cognitive problem, not a sensor problem.</p>
+      </div>
+      <div class="lab">
+        <form onsubmit="return false" aria-label="Resilience curve parameters">
+          <div class="presets" role="group" aria-label="Scenarios">
+            <button type="button" data-p="2,1.5,2,0.55,3,1" aria-pressed="true">Baseline</button>
+            <button type="button" data-p="2,0.4,0.6,0.35,1.6,1" aria-pressed="false">Faster detection</button>
+            <button type="button" data-p="2,1.5,2,0.25,3,1" aria-pressed="false">Trained staff</button>
+            <button type="button" data-p="2,1.5,2,0.55,1.2,1.04" aria-pressed="false">Recover and adapt</button>
+          </div>
+          <div class="field"><label for="ta"><span>Onset <i>t<sub>a</sub></i></span><output id="ta-o"></output></label><input type="range" id="ta" min="0" max="6" step="0.25" value="2"><small>when the manipulation begins</small></div>
+          <div class="field"><label for="tal"><span>Time to alert</span><output id="tal-o"></output></label><input type="range" id="tal" min="0.1" max="6" step="0.1" value="1.5"><small>the defender's Sense stage</small></div>
+          <div class="field"><label for="tact"><span>Time to act</span><output id="tact-o"></output></label><input type="range" id="tact" min="0.1" max="6" step="0.1" value="2"><small>the defender's Decide stage</small></div>
+          <div class="field"><label for="depth"><span>Depth <i>δ<sub>max</sub></i></span><output id="depth-o"></output></label><input type="range" id="depth" min="0.05" max="0.95" step="0.05" value="0.55"><small>worst loss of decision quality</small></div>
+          <div class="field"><label for="ttr"><span>Time to recover</span><output id="ttr-o"></output></label><input type="range" id="ttr" min="0.2" max="8" step="0.2" value="3"><small>until quality is restored</small></div>
+          <div class="field"><label for="adapt"><span>Level after adapting</span><output id="adapt-o"></output></label><input type="range" id="adapt" min="0.8" max="1.1" step="0.01" value="1"><small>above 1 means the incident left the system better</small></div>
+        </form>
+        <div>
+          <div class="readout" aria-live="polite">
+            <div class="r"><b id="r-R">–</b><span>resilience <i>R</i> over 12 h</span></div>
+            <div><b id="r-depth">–</b><span>depth δ<sub>max</sub></span></div>
+            <div><b id="r-ttd">–</b><span>time to detect</span></div>
+            <div><b id="r-loss">–</b><span>loss area Λ (hours)</span></div>
+          </div>
+          <svg id="curve" viewBox="0 0 640 290" role="img" aria-labelledby="curve-title"><title id="curve-title">Normalized decision quality through an incident</title></svg>
+          <div class="formula">R(𝒜, π; w) = (1/T) ∫₀ᵀ Q(t)/Q₀ dt &nbsp;·&nbsp; Λ = ∫₀ᵀ (1 − q(t)) dt &nbsp;·&nbsp; TTD = t<sub>d</sub> − t<sub>a</sub></div>
+          <p class="lab-note">Piecewise-linear illustration of the book's definition over a 12-hour horizon, with a single
+            manipulation. In the book, <i>R</i> is the worst case over a whole set of manipulations, which is what makes it a
+            design criterion rather than a description of one incident.</p>
+        </div>
+      </div>
+    </div></section>
+
+    <section id="parts" class="band"><div class="wrap">
+      <div class="sec-head">
+        <span class="label">The book</span>
+        <h2>Seven parts</h2>
+        <p>Each chapter can be read on its own and closes with worked examples, case studies, an ethics and limits section,
+          exercises, and a computational lab with companion code.</p>
+      </div>
+      <div class="parts">
+        <div class="part"><span class="n">I</span><div><h3>Foundations</h3><p>The conceptual frame: decision security, the Stack, the loop, the Cube, attack chains, and metrics for risk and resilience.</p></div></div>
+        <div class="part"><span class="n">II</span><div><h3>Models and defenses</h3><p>The modeling toolkit and the engineering of defenses built on it.</p></div></div>
+        <div class="part"><span class="n">III</span><div><h3>Individual cognition</h3><p>Attention, belief, risk perception, and bounded rationality as system components with inputs, outputs, and dynamics.</p></div></div>
+        <div class="part"><span class="n">IV</span><div><h3>Organizational and societal cognition</h3><p>Teams, institutions, and publics: how manipulation propagates and how collective decisions degrade.</p></div></div>
+        <div class="part"><span class="n">V</span><div><h3>Cognition for defense</h3><p>Turning cognitive mechanisms to defensive advantage, including deception used by defenders.</p></div></div>
+        <div class="part"><span class="n">VI</span><div><h3>Artificial and hybrid cognition</h3><p>AI agents and human–AI teams, closing with humans and AI in the control loop of cyber-physical systems.</p></div></div>
+        <div class="part"><span class="n">VII</span><div><h3>Evaluation, governance, frontiers</h3><p>How claims about people are tested, how the field should be governed, and what remains open.</p></div></div>
+        <div class="part"><span class="n">A·B</span><div><h3>Appendices</h3><p>Frameworks, standards, and terms; test scenarios and benchmarks, including benchmarks for agentic AI, for reproducible evaluation.</p></div></div>
+      </div>
+
+      <h3 style="margin:2.5rem 0 .8rem">The quantitative toolkit</h3>
+      <ul class="tags">
+        <li>Bayesian inference and detection under low base rates</li>
+        <li>Choice models and bounded rationality</li>
+        <li>Markov and partially observable models</li>
+        <li>Game theory and information design</li>
+        <li>Mechanism design</li>
+        <li>Queueing for attention</li>
+        <li>Network diffusion</li>
+        <li>Control</li>
+        <li>Experimental and causal methods</li>
+      </ul>
+
+      <div class="feats">
+        <div class="feat"><h3>Reading paths</h3><p>Courses on cognitive security, human factors and security operations, AI security and human–AI teaming, game theory and deception, security studies, and professional training.</p></div>
+        <div class="feat"><h3>Ethics and limits</h3><p>Every chapter states them. Questions of autonomy, privacy, and legitimate influence are treated as seriously as the technical ones.</p></div>
+        <div class="feat"><h3>Computational labs</h3><p>Companion code per chapter, with test scenarios and benchmarks in Appendix B.</p></div>
+        <div class="feat"><h3>For whom</h3><p>Researchers from psychology, computer science, engineering, and the social sciences, and practitioners in industry and government entering the field.</p></div>
+      </div>
+    </div></section>
+
+    <section id="research"><div class="wrap">
+      <div class="sec-head">
+        <span class="label">Related research</span>
+        <h2>The work behind the book</h2>
+        <p>The book grew out of a decade of research on modeling human vulnerabilities as system components, beginning with
+          Linan Huang's doctoral work at NYU on attention and alert management.</p>
+      </div>
+      <ul class="papers">
+        <li><div class="t">Cognitive Security: A System Science Approach</div><div class="m">L. Huang and Q. Zhu · SpringerBriefs, 2023 · <a href="https://doi.org/10.1007/978-3-031-43652-9">DOI</a> — the seed from which this book grew</div></li>
+        <li><div class="t">ADVERT: An Adaptive and Data-Driven Attention Enhancement Mechanism for Phishing Prevention</div><div class="m">L. Huang, S. Jia, E. Balcetis, and Q. Zhu · IEEE Transactions on Information Forensics and Security, 2022 · <a href="https://doi.org/10.1109/tifs.2022.3189530">DOI</a></div></li>
+        <li><div class="t">RADAMS: Resilient and Adaptive Alert and Attention Management Strategy against Informational Denial-of-Service Attacks</div><div class="m">L. Huang and Q. Zhu · Computers &amp; Security, 2022 · <a href="https://doi.org/10.1016/j.cose.2022.102844">DOI</a></div></li>
+        <li><div class="t">Combating Informational Denial-of-Service (IDoS) Attacks: Modeling and Mitigation of Attentional Human Vulnerability</div><div class="m">L. Huang and Q. Zhu · GameSec 2021, Best Student Paper · <a href="https://doi.org/10.1007/978-3-030-90370-1_17">DOI</a></div></li>
+        <li><div class="t">Guarding Against Malicious Biased Threats (GAMBiT): Experimental Design of Cognitive Sensors and Triggers with Behavioral Impact Analysis</div><div class="m">B. Beltz, P.-Y. Chen, …, Y.-T. Yang, and Q. Zhu · Computational Brain &amp; Behavior, 2026</div></li>
+        <li><div class="t">GAMBiT datasets: Revealing Cognitive Bias in Human-Subjects Red-Team Cyber Range Operations</div><div class="m">B. Beltz et al. · Data in Brief, 2026 · <a href="https://doi.org/10.1016/j.dib.2026.112476">DOI</a></div></li>
+        <li><div class="t">Transparent Tagging for Strategic Social Nudges on User-Generated Misinformation</div><div class="m">Y.-T. Yang, T. Li, and Q. Zhu · IEEE Transactions on Network Science and Engineering, 2025 · <a href="https://doi.org/10.1109/TNSE.2025.3591983">DOI</a></div></li>
+        <li><div class="t">Stuck on a Phishing Lure: Differential Use of Base Rates in Self and Social Judgments of Susceptibility to Cyber Risk</div><div class="m">E. Cox, Q. Zhu, and E. Balcetis · Comprehensive Results in Social Psychology, 2020</div></li>
+        <li><div class="t">Bi-Level Game-Theoretic Planning of Cyber Deception for Cognitive Arbitrage</div><div class="m">Y.-T. Yang and Q. Zhu · <a href="https://arxiv.org/abs/2509.05498">arXiv:2509.05498</a>, 2025</div></li>
+        <li><div class="t">LLM-Stackelberg Games: Conjectural Reasoning Equilibria and Their Applications to Spearphishing</div><div class="m">Q. Zhu · <a href="https://arxiv.org/abs/2507.09407">arXiv:2507.09407</a>, 2025</div></li>
+      </ul>
+      <div class="see">
+        <a class="btn" href="../deception/">Game Theory for Deception →</a>
+        <a class="btn" href="../agentic-ai/">Agentic AI →</a>
+        <a class="btn" href="../publications.html">All publications →</a>
+      </div>
+    </div></section>
+  </main>
+
+  <footer><div class="wrap">
+    <span>© 2026 Ya-Ting Yang, Linan Huang, and Quanyan Zhu</span>
+    <span><a href="../">Quanyan Zhu</a> · <a href="mailto:qz494@nyu.edu">qz494@nyu.edu</a></span>
+  </div></footer>
+
+  <script>
+  (function () {
+    const $ = id => document.getElementById(id);
+    const keys = ['ta', 'tal', 'tact', 'depth', 'ttr', 'adapt'];
+    const H = 12;                       // evaluation horizon, hours
+    const fmt = {
+      ta: v => v.toFixed(2) + ' h', tal: v => v.toFixed(1) + ' h', tact: v => v.toFixed(1) + ' h',
+      depth: v => v.toFixed(2), ttr: v => v.toFixed(1) + ' h', adapt: v => v.toFixed(2)
+    };
+    const svg = $('curve'), NS = 'http://www.w3.org/2000/svg';
+    const W = 640, Hp = 290, L = 46, R = 14, T = 16, B = 40;
+    const el = (n, a, t) => { const e = document.createElementNS(NS, n); for (const k in a) e.setAttribute(k, a[k]); if (t != null) e.textContent = t; svg.appendChild(e); return e; };
+
+    // q(t): nominal until onset, degrading while undetected, recovering after the defender acts,
+    // then settling at the adapted level. Piecewise linear, as in the book's illustration.
+    function q(t, p) {
+      const td = p.ta + p.tal + p.tact, tr = td + p.ttr, low = 1 - p.depth;
+      if (t <= p.ta) return 1;
+      if (t <= td) return 1 - p.depth * (t - p.ta) / Math.max(td - p.ta, 1e-6);
+      if (t <= tr) return low + (p.adapt - low) * (t - td) / Math.max(p.ttr, 1e-6);
+      return p.adapt;
+    }
+
+    function update() {
+      const p = {};
+      for (const k of keys) { p[k] = parseFloat($(k).value); $(k + '-o').textContent = fmt[k](p[k]); }
+      const td = p.ta + p.tal + p.tact, tr = td + p.ttr;
+      const N = 600, dt = H / N;
+      let area = 0, loss = 0;
+      for (let i = 0; i < N; i++) {
+        const v = q((i + 0.5) * dt, p);
+        area += v * dt; loss += (1 - v) * dt;
+      }
+      $('r-R').textContent = (area / H).toFixed(3);
+      $('r-depth').textContent = p.depth.toFixed(2);
+      $('r-ttd').textContent = (p.tal + p.tact).toFixed(1) + ' h';
+      $('r-loss').textContent = loss.toFixed(2);
+
+      while (svg.lastChild && svg.lastChild.nodeName !== 'title') svg.removeChild(svg.lastChild);
+      const x = t => L + (W - L - R) * t / H;
+      const y = v => Hp - B - (Hp - T - B) * v;
+      for (let i = 0; i <= 4; i++) {
+        const v = i / 4;
+        el('line', { x1: L, x2: W - R, y1: y(v), y2: y(v), class: 'axis' });
+        el('text', { x: L - 6, y: y(v) + 4, 'text-anchor': 'end' }, v.toFixed(2));
+      }
+      for (let h = 0; h <= H; h += 2) el('text', { x: x(h), y: Hp - B + 17, 'text-anchor': 'middle' }, h);
+      el('text', { x: (L + W - R) / 2, y: Hp - 4, 'text-anchor': 'middle' }, 'hours into the shift');
+
+      // Shade the deficit (below nominal) and any gain (above it).
+      const pts = [];
+      for (let i = 0; i <= N; i++) { const t = i * dt; pts.push([x(t), y(q(t, p)), q(t, p)]); }
+      const seg = (test, cls) => {
+        let run = [];
+        const flush = () => {
+          if (run.length > 1) {
+            const d = 'M' + run[0][0].toFixed(1) + ' ' + y(1).toFixed(1) + ' ' +
+              run.map(q2 => 'L' + q2[0].toFixed(1) + ' ' + q2[1].toFixed(1)).join(' ') +
+              ' L' + run[run.length - 1][0].toFixed(1) + ' ' + y(1).toFixed(1) + ' Z';
+            el('path', { d, class: cls });
+          }
+          run = [];
+        };
+        for (const pt of pts) { if (test(pt[2])) run.push(pt); else flush(); }
+        flush();
+      };
+      seg(v => v < 1, 'loss');
+      seg(v => v > 1, 'gain');
+      el('line', { x1: L, x2: W - R, y1: y(1), y2: y(1), class: 'axis' });
+      el('path', { d: pts.map((q2, i) => (i ? 'L' : 'M') + q2[0].toFixed(1) + ' ' + q2[1].toFixed(1)).join(' '), class: 'q' });
+
+      [[p.ta, 'onset'], [p.ta + p.tal, 'alert'], [td, 'act'], [tr, 'restored']].forEach(([t, lbl], i) => {
+        if (t > H) return;
+        el('line', { x1: x(t), x2: x(t), y1: y(0), y2: y(1.04), class: 'mark' });
+        el('text', { x: x(t) + 3, y: T + 12 + (i % 2) * 14, class: 'marklabel' }, lbl);
+      });
+    }
+
+    document.querySelectorAll('.presets button').forEach(btn => btn.addEventListener('click', () => {
+      const v = btn.dataset.p.split(',');
+      keys.forEach((k, i) => { $(k).value = v[i]; });
+      document.querySelectorAll('.presets button').forEach(b => b.setAttribute('aria-pressed', b === btn));
+      update();
+    }));
+    keys.forEach(k => $(k).addEventListener('input', () => {
+      document.querySelectorAll('.presets button').forEach(b => b.setAttribute('aria-pressed', 'false'));
+      update();
+    }));
+    update();
+  })();
+  </script>
+</body>
+</html>

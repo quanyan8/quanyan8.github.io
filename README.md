@@ -8,6 +8,7 @@ Personal research homepage of Quanyan Zhu, served by GitHub Pages at https://qua
 - `publications.html`: full publication list, **generated**; don't edit it by hand
 - `assets/style.css`: shared styles (light and dark mode)
 - `assets/cv.pdf`: public abridged CV (activities since 2022, no funding); regenerate with `MyCV 2026 Summer/CVs/make_web_cv.py`
+- `cognitive-security/`: Cognitive Security book site (single page with interactive resilience-curve lab, Def. 4.10); edit directly
 - `agentic-ai/`: Agentic AI book site (single page with interactive error–recovery reliability lab, Prop. 2.13); edit directly
 - `tokenomics/`: AI Tokenomics book site (single page with interactive context-replay cost calculator); edit directly
 - `deception/`: Game Theory for Deception site (home with primer and interactive honeypot game, publications by theme, book, events); plain HTML sharing `deception/style.css`, edit directly
