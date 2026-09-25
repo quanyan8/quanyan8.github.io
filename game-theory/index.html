@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Game Theory at NYU | Lectures on Static and Dynamic Game Theory — Başar and Zhu</title>
+  <meta name="description" content="Lectures on Static and Dynamic Game Theory by Tamer Başar and Quanyan Zhu (SIAM Press): contents, a free 262-page sample, an interactive 2×2 game solver, and the game-theory research behind the book at NYU.">
+  <meta name="author" content="Quanyan Zhu">
+  <link rel="canonical" href="https://quanyan8.github.io/game-theory/">
+  <meta property="og:type" content="book">
+  <meta property="og:site_name" content="Quanyan Zhu">
+  <meta property="og:title" content="Lectures on Static and Dynamic Game Theory — Başar and Zhu">
+  <meta property="og:description" content="Foundations for multi-agent systems and control: contents, a free sample, an interactive 2×2 game solver, and the research behind the book.">
+  <meta property="og:url" content="https://quanyan8.github.io/game-theory/">
+  <meta property="og:image" content="https://quanyan8.github.io/assets/books/game-theory-lectures-cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f4ecd9'/%3E%3Crect x='4' y='4' width='12' height='12' fill='%231f3a6e'/%3E%3Crect x='16' y='16' width='12' height='12' fill='%231f3a6e'/%3E%3Crect x='16' y='4' width='12' height='12' fill='%23b8863b'/%3E%3Crect x='4' y='16' width='12' height='12' fill='%23b8863b'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    "name": "Lectures on Static and Dynamic Game Theory: Foundations for Multi-Agent Systems and Control",
+    "author": [
+      {"@type": "Person", "name": "Tamer Başar"},
+      {"@type": "Person", "@id": "https://quanyan8.github.io/#person", "name": "Quanyan Zhu", "url": "https://quanyan8.github.io/"}
+    ],
+    "publisher": {"@type": "Organization", "name": "SIAM"},
+    "url": "https://quanyan8.github.io/game-theory/",
+    "image": "https://quanyan8.github.io/assets/books/game-theory-lectures-cover.png",
+    "inLanguage": "en",
+    "about": ["Game theory", "Dynamic games", "Nash equilibrium", "Stackelberg games", "Mechanism design", "Mean-field games", "Multi-agent systems", "Control theory"],
+    "workExample": {"@type": "Book", "name": "Lectures on Static and Dynamic Game Theory: sample (Part I)", "url": "https://quanyan8.github.io/assets/books/game-theory-lectures-sample.pdf", "bookFormat": "https://schema.org/EBook", "isAccessibleForFree": true}
+  }
+  </script>
+</head>
+<body>
+  <nav class="nav" aria-label="Site"><div class="wrap">
+    <a class="brand" href="./">Game <span>Theory</span></a>
+    <div class="links">
+      <a href="#solver">Solve a game</a>
+      <a href="#contents">Contents</a>
+      <a href="#research">Research</a>
+      <a href="#teaching">Teaching</a>
+      <a href="../">Quanyan Zhu ↗</a>
+    </div>
+  </div></nav>
+
+  <header class="hero"><div class="wrap grid">
+    <div>
+      <p class="label"><b>A textbook</b> · SIAM Press, to appear 2027</p>
+      <h1>Lectures on Static and Dynamic Game Theory</h1>
+      <p class="sub">Foundations for Multi-Agent Systems and Control</p>
+      <p class="by">Tamer Başar (University of Illinois Urbana-Champaign) and Quanyan Zhu (New York University)</p>
+      <p class="lede">Game theory is the mathematical study of strategic interactions among rational decision-makers. Where
+        classical decision theory models an agent as an isolated optimizer in a fixed environment, game theory begins from
+        interdependence: each player forms expectations about others who are reasoning about them in turn. These lectures
+        develop that theory from matrix games to mean-field and learning games, with the multi-agent systems, control, and
+        security problems that motivate it.</p>
+      <div class="btns">
+        <a class="btn primary" href="../assets/books/game-theory-lectures-sample.pdf">Read Part I free (PDF)</a>
+        <a class="btn" href="#solver">Solve a 2×2 game</a>
+        <a class="btn" href="#contents">Full contents</a>
+      </div>
+      <div class="facts">
+        <div><b>30</b><span>chapters</span></div>
+        <div><b>7</b><span>parts</span></div>
+        <div><b>~950</b><span>pages</span></div>
+        <div><b>262</b><span>pages in the free sample</span></div>
+      </div>
+    </div>
+    <a class="cover" href="../assets/books/game-theory-lectures-sample.pdf"><img src="../assets/books/game-theory-lectures-cover.png" alt="Cover of Lectures on Static and Dynamic Game Theory by Tamer Başar and Quanyan Zhu" width="420" height="600"></a>
+  </div></header>
+
+  <main>
+    <section id="solver"><div class="wrap">
+      <div class="sec-head">
+        <span class="label">Interactive · Chapters 2–4</span>
+        <h2>Solve a 2×2 game</h2>
+        <p>Edit any payoff and the equilibria are recomputed. <b class="b1" style="color:var(--blue)">P1</b> chooses a row
+          and <b class="b2" style="color:var(--wood)">P2</b> chooses a column; both maximize. Underlined payoffs are best
+          responses, and a cell where both are underlined is a pure-strategy Nash equilibrium.</p>
+      </div>
+      <div class="solver">
+        <div>
+          <div class="presets" role="group" aria-label="Classic games">
+            <button type="button" data-g="-1,-1,-3,0,0,-3,-2,-2" aria-pressed="true">Prisoner's Dilemma</button>
+            <button type="button" data-g="1,-1,-1,1,-1,1,1,-1" aria-pressed="false">Matching Pennies</button>
+            <button type="button" data-g="2,1,0,0,0,0,1,2" aria-pressed="false">Battle of the Sexes</button>
+            <button type="button" data-g="4,4,1,3,3,1,2,2" aria-pressed="false">Stag Hunt</button>
+            <button type="button" data-g="0,0,0,0,0,0,0,0" aria-pressed="false">Blank</button>
+          </div>
+          <table class="game">
+            <thead><tr><th></th><th class="p2" colspan="2" id="p2h">P2 (column)</th></tr>
+              <tr><th class="p1">P1 (row)</th><th class="p2">L</th><th class="p2">R</th></tr></thead>
+            <tbody>
+              <tr><th class="p1">T</th>
+                <td id="cTL"><span class="cell"><input class="u1" id="a11" type="number" step="0.5" aria-label="P1 payoff, top left"><span class="sep">,</span><input class="u2" id="b11" type="number" step="0.5" aria-label="P2 payoff, top left"></span></td>
+                <td id="cTR"><span class="cell"><input class="u1" id="a12" type="number" step="0.5" aria-label="P1 payoff, top right"><span class="sep">,</span><input class="u2" id="b12" type="number" step="0.5" aria-label="P2 payoff, top right"></span></td></tr>
+              <tr><th class="p1">B</th>
+                <td id="cBL"><span class="cell"><input class="u1" id="a21" type="number" step="0.5" aria-label="P1 payoff, bottom left"><span class="sep">,</span><input class="u2" id="b21" type="number" step="0.5" aria-label="P2 payoff, bottom left"></span></td>
+                <td id="cBR"><span class="cell"><input class="u1" id="a22" type="number" step="0.5" aria-label="P1 payoff, bottom right"><span class="sep">,</span><input class="u2" id="b22" type="number" step="0.5" aria-label="P2 payoff, bottom right"></span></td></tr>
+            </tbody>
+          </table>
+          <p class="legend">Each cell reads (<b class="b1">u₁</b>, <b class="b2">u₂</b>). <span id="zs"></span></p>
+        </div>
+        <div class="results" aria-live="polite">
+          <h3>Equilibria</h3>
+          <div id="eqs"></div>
+          <div class="sec-strat" id="security"></div>
+          <p class="sec-strat">In a zero-sum game the mixed equilibrium is the saddle point, and the equilibrium payoff is
+            the value of the game: what each player can guarantee with a security strategy, whatever the other does
+            (§2.1.2, §2.2).</p>
+        </div>
+      </div>
+    </div></section>
+
+    <section id="contents"><div class="wrap">
+      <div class="sec-head">
+        <span class="label">Contents</span>
+        <h2>Thirty chapters in seven parts</h2>
+        <p>Part I is available now as a free sample: fundamentals through correlated equilibrium, 262 pages. Every chapter
+          ends with further notes, reading, and exercises; two appendices review optimal control and the mathematical
+          background.</p>
+      </div>
+      <div class="toc">
+        <details open><summary><span class="pn">I</span>Fundamentals of Game Theory<span class="in-sample">in sample</span></summary><ol>
+          <li><span class="c">1</span><span>Introduction to Game Theory</span></li>
+          <li><span class="c">2</span><span>Matrix Games</span></li>
+          <li><span class="c">3</span><span>Nash Equilibrium: Concepts and Definition</span></li>
+          <li><span class="c">4</span><span>Nash Equilibrium: Properties and Computation</span></li>
+          <li><span class="c">5</span><span>Extensive-Form Games</span></li>
+          <li><span class="c">6</span><span>Stackelberg (Leader-Follower) Games</span></li>
+          <li><span class="c">7</span><span>Equilibrium Refinement</span></li>
+          <li><span class="c">8</span><span>Correlated Equilibrium</span></li></ol></details>
+        <details><summary><span class="pn">II</span>Continuous-Kernel Nash and Stackelberg Games</summary><ol>
+          <li><span class="c">9</span><span>Infinite and Continuous-Kernel Games</span></li>
+          <li><span class="c">10</span><span>Continuous-Kernel Stackelberg Games</span></li>
+          <li><span class="c">11</span><span>Quadratic and Network Games</span></li></ol></details>
+        <details><summary><span class="pn">III</span>Games with Incomplete Information</summary><ol>
+          <li><span class="c">12</span><span>Bayesian Games</span></li>
+          <li><span class="c">13</span><span>Auction Games</span></li>
+          <li><span class="c">14</span><span>Revenue-Optimal Auction Design</span></li>
+          <li><span class="c">15</span><span>Mechanism Design Theory</span></li></ol></details>
+        <details><summary><span class="pn">IV</span>Dynamic and Repeated Games</summary><ol>
+          <li><span class="c">16</span><span>Extensive-Form Dynamic Games</span></li>
+          <li><span class="c">17</span><span>Principal-Agent Games</span></li>
+          <li><span class="c">18</span><span>Repeated Games</span></li>
+          <li><span class="c">19</span><span>Markov Games</span></li>
+          <li><span class="c">20</span><span>Dynamic Infinite Games</span></li></ol></details>
+        <details><summary><span class="pn">V</span>Differential and Stochastic Games</summary><ol>
+          <li><span class="c">21</span><span>Differential Games</span></li>
+          <li><span class="c">22</span><span>Dynamic Stackelberg Games</span></li>
+          <li><span class="c">23</span><span>Stochastic Differential Games</span></li>
+          <li><span class="c">24</span><span>Mean-Field Games</span></li></ol></details>
+        <details><summary><span class="pn">VI</span>Cooperative and Matching Games</summary><ol>
+          <li><span class="c">25</span><span>Nash Bargaining</span></li>
+          <li><span class="c">26</span><span>Coalition Games</span></li>
+          <li><span class="c">27</span><span>Matching Games</span></li></ol></details>
+        <details><summary><span class="pn">VII</span>Advanced Topics</summary><ol>
+          <li><span class="c">28</span><span>Routing Games</span></li>
+          <li><span class="c">29</span><span>Evolutionary Games</span></li>
+          <li><span class="c">30</span><span>Learning in Games</span></li></ol></details>
+        <details><summary><span class="pn">A·B</span>Appendices</summary><ol>
+          <li><span class="c">A</span><span>Elements of Optimal Control Theory</span></li>
+          <li><span class="c">B</span><span>Mathematical Background</span></li></ol></details>
+      </div>
+      <div class="btns" style="margin-top:2rem"><a class="btn primary" href="../assets/books/game-theory-lectures-sample.pdf">Download Part I (PDF, 4.4 MB)</a></div>
+    </div></section>
+
+    <section id="research"><div class="wrap">
+      <div class="sec-head">
+        <span class="label">Research</span>
+        <h2>Game theory at NYU</h2>
+        <p>The theory in the book is the working language of my group: designing systems whose participants, human or
+          artificial, pursue their own objectives, and proving what those systems will do.</p>
+      </div>
+      <div class="themes">
+        <div class="theme">
+          <h3>Games and control of socio-technical systems</h3>
+          <p>Game-theoretic control as a design discipline for systems where people, institutions, and machines interact.</p>
+          <ul>
+            <li>Revisiting Game-Theoretic Control in Socio-Technical Networks <span class="m">· Zhu and Başar, IEEE L-CSS 2025 · <a href="https://doi.org/10.1109/lcsys.2025.3557366">DOI</a></span></li>
+            <li>Disentangling Resilience from Robustness <span class="m">· Zhu and Başar, IEEE Control Systems Magazine 2024 · <a href="https://doi.org/10.1109/MCS.2024.3382415">DOI</a></span></li>
+            <li>Cooperative and Noncooperative Paradigms for Game-Theoretic Control <span class="m">· Başar, Hayakawa, Ishii, and Zhu · <a href="https://arxiv.org/abs/2605.17886">arXiv</a></span></li>
+          </ul>
+        </div>
+        <div class="theme">
+          <h3>Security games and deception</h3>
+          <p>Attacker–defender games, defensive deception, and automated penetration testing.</p>
+          <ul>
+            <li>MEGA-PT: A Meta-Game Framework for Agile Penetration Testing <span class="m">· Ge and Zhu, GameSec 2024, Best Paper · <a href="https://doi.org/10.1007/978-3-031-74835-6_2">DOI</a></span></li>
+            <li>Bilateral Cognitive Security Games under Stealthy Injection Attacks <span class="m">· Nguyen, Zhu, and Teixeira, CDC 2025 · <a href="https://doi.org/10.1109/cdc57313.2025.11312998">DOI</a></span></li>
+            <li>More on the <a href="../deception/">deception project site</a></li>
+          </ul>
+        </div>
+        <div class="theme">
+          <h3>Learning, conjectures, and misspecification</h3>
+          <p>What agents converge to when their models of the world, and of each other, are wrong.</p>
+          <ul>
+            <li>Adaptive Security Response Strategies Through Conjectural Online Learning <span class="m">· Hammar, Li, Stadler, and Zhu, IEEE TIFS 2025 · <a href="https://doi.org/10.1109/tifs.2025.3558600">DOI</a></span></li>
+            <li>Computing and Learning Berk–Nash Equilibria in Infinite-Horizon MDPs <span class="m">· Zhu and Han · <a href="https://arxiv.org/abs/2603.13641">arXiv</a></span></li>
+            <li>Calibrated Learning of Sequential Equilibrium in Signaling Games <span class="m">· Zhu, CDC 2026</span></li>
+          </ul>
+        </div>
+        <div class="theme">
+          <h3>Coalitions, bargaining, and mean-field limits</h3>
+          <p>Cooperative game theory for large populations of agents that join, leave, split, and merge.</p>
+          <ul>
+            <li>Continuum Aumann–Drèze Value and Exit-and-Join Coalition Dynamics <span class="m">· Zhu, CDC 2026</span></li>
+            <li>Split-Merge Dynamics for Shapley-Fair Coalition Formation <span class="m">· Zhu and Han, MTNS 2026 · <a href="https://arxiv.org/abs/2603.17153">arXiv</a></span></li>
+            <li>Exit-and-Join Dynamics and Equilibrium in Continuum Cooperative Games <span class="m">· Zhu · <a href="https://arxiv.org/abs/2606.28824">arXiv</a></span></li>
+          </ul>
+        </div>
+        <div class="theme">
+          <h3>Mechanism and information design</h3>
+          <p>Designing the rules, the contracts, and the signals rather than the actions.</p>
+          <ul>
+            <li>Stackelberg Risk Preference Design <span class="m">· Liu and Zhu, Mathematical Programming 2025 · <a href="https://doi.org/10.1007/s10107-024-02083-2">DOI</a></span></li>
+            <li>Transparent Tagging for Strategic Social Nudges on Misinformation <span class="m">· Yang, Li, and Zhu, IEEE TNSE 2025 · <a href="https://doi.org/10.1109/tnse.2025.3591983">DOI</a></span></li>
+            <li>Herd Accountability of Privacy-Preserving Algorithms: A Stackelberg Game Approach <span class="m">· Yang, Zhang, and Zhu, IEEE TIFS 2025 · <a href="https://doi.org/10.1109/tifs.2025.3540357">DOI</a></span></li>
+          </ul>
+        </div>
+        <div class="theme">
+          <h3>Games for agentic AI</h3>
+          <p>Language models and AI agents as strategic players: reasoning, pricing, and coordination.</p>
+          <ul>
+            <li>Reasoning and Behavioral Equilibria in LLM-Nash Games <span class="m">· Zhu · <a href="https://arxiv.org/abs/2507.08208">arXiv</a></span></li>
+            <li>PACT: A Contract-Theoretic Framework for Pricing Agentic AI Services <span class="m">· Yang and Zhu, GLOBECOM 2025 · <a href="https://doi.org/10.1109/globecom59602.2025.11431824">DOI</a></span></li>
+            <li>More on the <a href="../agentic-ai/">Agentic AI</a> and <a href="../tokenomics/">AI Tokenomics</a> sites</li>
+          </ul>
+        </div>
+      </div>
+      <div class="see">
+        <a class="btn" href="../publications.html">All publications →</a>
+        <a class="btn" href="../cognitive-security/">Cognitive Security →</a>
+      </div>
+    </div></section>
+
+    <section id="teaching"><div class="wrap">
+      <div class="sec-head">
+        <span class="label">Teaching and community</span>
+        <h2>Where this material is taught and discussed</h2>
+      </div>
+      <div class="community">
+        <div><h3>ECE-GY 6263 Game Theory</h3><p>The graduate course at NYU Tandon from which these lectures grew. The sample doubles as the course's opening chapters.</p></div>
+        <div><h3>Dynamic games community</h3><p>Executive Board of the International Society of Dynamic Games; Associate Editor of <em>Dynamic Games and Applications</em>.</p></div>
+        <div><h3>GameSec</h3><p>Chair of the 15th Conference on Decision and Game Theory for Security (New York, 2024), and program chair and organizer in earlier years.</p></div>
+      </div>
+    </div></section>
+  </main>
+
+  <footer><div class="wrap">
+    <span>© 2026 Tamer Başar and Quanyan Zhu</span>
+    <span><a href="../">Quanyan Zhu</a> · <a href="../publications.html">Publications</a> · <a href="mailto:qz494@nyu.edu">qz494@nyu.edu</a></span>
+  </div></footer>
+
+  <script>
+  (function () {
+    const $ = id => document.getElementById(id);
+    const ids = ['a11','b11','a12','b12','a21','b21','a22','b22'];
+    const cells = { TL: 'cTL', TR: 'cTR', BL: 'cBL', BR: 'cBR' };
+    const fmt = x => Number.isInteger(x) ? String(x) : x.toFixed(2).replace(/0$/, '');
+
+    function read() {
+      const v = {};
+      for (const id of ids) v[id] = parseFloat($(id).value) || 0;
+      return {
+        // u1[row][col], u2[row][col]; row 0 = T, col 0 = L
+        u1: [[v.a11, v.a12], [v.a21, v.a22]],
+        u2: [[v.b11, v.b12], [v.b21, v.b22]]
+      };
+    }
+
+    function solve(g) {
+      const { u1, u2 } = g;
+      // Best responses: P1 picks a row given a column, P2 picks a column given a row.
+      const br1 = [0, 1].map(c => u1[0][c] === u1[1][c] ? [0, 1] : (u1[0][c] > u1[1][c] ? [0] : [1]));
+      const br2 = [0, 1].map(r => u2[r][0] === u2[r][1] ? [0, 1] : (u2[r][0] > u2[r][1] ? [0] : [1]));
+      const pure = [];
+      for (let r = 0; r < 2; r++) for (let c = 0; c < 2; c++)
+        if (br1[c].includes(r) && br2[r].includes(c)) pure.push([r, c]);
+
+      // Interior mixed equilibrium: each player mixes to make the other indifferent.
+      // P1 plays T with probability p; P2 plays L with probability q.
+      const d2 = (u2[0][0] - u2[0][1]) - (u2[1][0] - u2[1][1]);
+      const d1 = (u1[0][0] - u1[1][0]) - (u1[0][1] - u1[1][1]);
+      let mixed = null;
+      if (Math.abs(d2) > 1e-12 && Math.abs(d1) > 1e-12) {
+        const p = (u2[1][1] - u2[1][0]) / d2;
+        const q = (u1[1][1] - u1[0][1]) / d1;
+        if (p > 1e-9 && p < 1 - 1e-9 && q > 1e-9 && q < 1 - 1e-9) {
+          const e1 = q * (p * u1[0][0] + (1 - p) * u1[1][0]) + (1 - q) * (p * u1[0][1] + (1 - p) * u1[1][1]);
+          const e2 = q * (p * u2[0][0] + (1 - p) * u2[1][0]) + (1 - q) * (p * u2[0][1] + (1 - p) * u2[1][1]);
+          mixed = { p, q, e1, e2 };
+        }
+      }
+      // Security (maximin) levels in pure strategies.
+      const sec1 = [0, 1].map(r => Math.min(u1[r][0], u1[r][1]));
+      const sec2 = [0, 1].map(c => Math.min(u2[0][c], u2[1][c]));
+      const zeroSum = [0, 1].every(r => [0, 1].every(c => Math.abs(u1[r][c] + u2[r][c]) < 1e-9));
+      return { br1, br2, pure, mixed, sec1, sec2, zeroSum };
+    }
+
+    const ROW = ['T', 'B'], COL = ['L', 'R'];
+
+    function render() {
+      const g = read(), s = solve(g);
+      for (const k in cells) $(cells[k]).classList.remove('ne');
+      ids.forEach(id => $(id).classList.remove('br'));
+      for (let c = 0; c < 2; c++) for (const r of s.br1[c]) $(`a${r + 1}${c + 1}`).classList.add('br');
+      for (let r = 0; r < 2; r++) for (const c of s.br2[r]) $(`b${r + 1}${c + 1}`).classList.add('br');
+      for (const [r, c] of s.pure) $(cells[ROW[r] + COL[c]]).classList.add('ne');
+
+      $('zs').innerHTML = s.zeroSum ? '<span class="zero-sum">zero-sum</span>' : '';
+      const out = [];
+      for (const [r, c] of s.pure) {
+        out.push(`<div class="eq"><span class="k">Pure Nash equilibrium</span>
+          <span class="v">(${ROW[r]}, ${COL[c]}) → payoffs (${fmt(g.u1[r][c])}, ${fmt(g.u2[r][c])})</span></div>`);
+      }
+      if (s.mixed) {
+        const { p, q, e1, e2 } = s.mixed;
+        out.push(`<div class="eq"><span class="k">Mixed Nash equilibrium${s.zeroSum ? ' · saddle point' : ''}</span>
+          <span class="v">P1 plays T with p = ${p.toFixed(3)}, P2 plays L with q = ${q.toFixed(3)}<br>
+          expected payoffs (${e1.toFixed(3)}, ${e2.toFixed(3)})${s.zeroSum ? ` · value of the game ${e1.toFixed(3)}` : ''}</span></div>`);
+      }
+      if (!out.length) out.push('<div class="eq none">No equilibrium in this class. Every finite game has one in mixed strategies (Nash’s theorem); with ties in the payoffs there can be a continuum of them, which this 2×2 solver does not enumerate.</div>');
+      $('eqs').innerHTML = out.join('');
+
+      const best1 = s.sec1[0] >= s.sec1[1] ? 0 : 1, best2 = s.sec2[0] >= s.sec2[1] ? 0 : 1;
+      $('security').innerHTML = `<b>Security strategies (pure).</b> P1: ${ROW[best1]}, guaranteeing at least
+        ${fmt(s.sec1[best1])}. P2: ${COL[best2]}, guaranteeing at least ${fmt(s.sec2[best2])}.`;
+    }
+
+    function setGame(str) {
+      const v = str.split(',').map(Number);
+      ids.forEach((id, i) => { $(id).value = v[i]; });
+    }
+    document.querySelectorAll('.presets button').forEach(btn => btn.addEventListener('click', () => {
+      setGame(btn.dataset.g);
+      document.querySelectorAll('.presets button').forEach(b => b.setAttribute('aria-pressed', b === btn));
+      render();
+    }));
+    ids.forEach(id => $(id).addEventListener('input', () => {
+      document.querySelectorAll('.presets button').forEach(b => b.setAttribute('aria-pressed', 'false'));
+      render();
+    }));
+    setGame(document.querySelector('.presets button').dataset.g);
+    render();
+  })();
+  </script>
+</body>
+</html>
