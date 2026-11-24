@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lectures on Optimization and Optimal Control Theory | Quanyan Zhu</title>
+  <meta name="description" content="Companion website for Lectures on Optimization and Optimal Control Theory by Quanyan Zhu (NYU, ECE-GY 6233): the full 777-page book as a free PDF, contents, a solutions manual for instructors, slides, code, and corrections.">
+  <meta name="author" content="Quanyan Zhu">
+  <link rel="canonical" href="https://quanyan8.github.io/optimization/">
+  <meta property="og:type" content="book">
+  <meta property="og:site_name" content="Quanyan Zhu">
+  <meta property="og:title" content="Lectures on Optimization and Optimal Control Theory | Quanyan Zhu">
+  <meta property="og:description" content="One course from the mathematical foundations of optimization to stochastic optimal control. The full book is free to read.">
+  <meta property="og:url" content="https://quanyan8.github.io/optimization/">
+  <meta property="og:image" content="https://quanyan8.github.io/assets/books/optimization-optimal-control-cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f4ecd9'/%3E%3Cpath d='M5 6 Q16 30 27 6' fill='none' stroke='%231f3a6e' stroke-width='3'/%3E%3Ccircle cx='16' cy='21' r='3' fill='%23b8863b'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    "name": "Lectures on Optimization and Optimal Control Theory",
+    "author": [
+      {"@type": "Person", "@id": "https://quanyan8.github.io/#person", "name": "Quanyan Zhu", "url": "https://quanyan8.github.io/"}
+    ],
+    "url": "https://quanyan8.github.io/optimization/",
+    "image": "https://quanyan8.github.io/assets/books/optimization-optimal-control-cover.png",
+    "inLanguage": "en",
+    "numberOfPages": 777,
+    "isAccessibleForFree": true,
+    "about": ["Optimization theory", "Convex optimization", "Optimization algorithms", "Calculus of variations", "Optimal control", "Dynamic programming", "Estimation theory", "Kalman filtering", "Stochastic control"],
+    "workExample": {"@type": "Book", "name": "Lectures on Optimization and Optimal Control Theory: full text", "url": "https://quanyan8.github.io/assets/books/optimization-optimal-control.pdf", "bookFormat": "https://schema.org/EBook", "isAccessibleForFree": true}
+  }
+  </script>
+</head>
+<body>
+  <nav class="nav" aria-label="Site"><div class="wrap">
+    <a class="brand" href="./">Optimization <span>&amp; Control</span></a>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="#contents">Contents</a>
+      <a href="#resources">Resources</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#related">Related</a>
+      <a href="../">Quanyan Zhu ↗</a>
+    </div>
+  </div></nav>
+
+  <header class="hero"><div class="wrap grid">
+    <div>
+      <p class="label"><b>Lecture notes</b> · ECE-GY 6233, New York University · 2026</p>
+      <h1>Lectures on Optimization and Optimal Control Theory</h1>
+      <p class="sub">From the foundations of optimization to control under uncertainty</p>
+      <p class="by">Quanyan Zhu (New York University)</p>
+      <p class="lede">One course, taught as one subject. The lectures begin with the mathematical foundations of
+        optimization and the classical optimality conditions, build through convex optimization and the algorithms
+        that solve it, and carry the same variational ideas into optimal control: the calculus of variations, the
+        minimum principle and dynamic programming, estimation and Kalman filtering, and stochastic control. The
+        complete book is free to read.</p>
+      <div class="btns">
+        <a class="btn primary" href="../assets/books/optimization-optimal-control.pdf">Read the full book (PDF)</a>
+        <a class="btn" href="#contents">Full contents</a>
+        <a class="btn" href="#resources">Solutions manual, slides, code</a>
+      </div>
+      <div class="facts">
+        <div><b>15</b><span>chapters</span></div>
+        <div><b>5</b><span>parts</span></div>
+        <div><b>777</b><span>pages</span></div>
+        <div><b>Free</b><span>complete text</span></div>
+      </div>
+    </div>
+    <a class="cover" href="../assets/books/optimization-optimal-control.pdf"><img src="../assets/books/optimization-optimal-control-cover.png" alt="Cover of Lectures on Optimization and Optimal Control Theory by Quanyan Zhu" width="420" height="600"></a>
+  </div></header>
+
+  <main>
+    <section id="about"><div class="wrap">
+      <div class="sec-head">
+        <span class="label">About the book</span>
+        <h2>One subject, usually taught as two</h2>
+        <p>Optimization and optimal control are ordinarily split between two courses and two literatures. A student
+          learns Lagrange multipliers and the KKT conditions in one term and the minimum principle in another, and the
+          fact that the second is the first, carried to a space of functions, arrives as a surprise rather than as the
+          point.</p>
+        <p>These lectures keep the thread visible. The same question is asked throughout — what must hold at an
+          optimum, and how can it be computed — first for a point in a finite-dimensional space, then for a point in a
+          normed space, then for a trajectory, and finally for a policy under uncertainty. The notation carries over
+          from chapter to chapter, so the costate of the minimum principle is recognizably the multiplier of Chapter 3,
+          and the Riccati equation of the linear-quadratic regulator is recognizably the one that reappears in the
+          Kalman filter.</p>
+      </div>
+      <div class="community">
+        <div><h3>Finite- and infinite-dimensional together</h3><p>Vector spaces, norms, and Gâteaux and Fréchet
+          differentials are introduced early, so that the step from minimizing a function to minimizing a functional
+          costs no new machinery. Classical optimality conditions, convexity, and duality are all stated in a form that
+          survives that step.</p></div>
+        <div><h3>Theory with the algorithms attached</h3><p>Two chapters are given to algorithms — descent methods,
+          Newton and quasi-Newton, conjugate gradient, penalty and barrier methods, projections and interior-point
+          ideas — so that the optimality conditions come with the means to act on them, and their convergence is
+          analyzed rather than asserted.</p></div>
+        <div><h3>Control as optimization over time</h3><p>Deterministic optimal control is developed from the calculus
+          of variations through the discrete- and continuous-time minimum principles and dynamic programming; the
+          stochastic part then adds estimation, filtering, and control under incomplete information, closing the loop
+          between what a system knows and what it should do.</p></div>
+      </div>
+    </div></section>
+
+    <section id="contents"><div class="wrap">
+      <div class="sec-head">
+        <span class="label">Contents</span>
+        <h2>Fifteen chapters in five parts</h2>
+        <p>An introductory chapter sets up the problem classes and the historical thread. Five parts follow, each
+          self-contained enough to be taught on its own once Parts I and II are in hand, and two appendices review
+          linear system theory and probability. Every chapter ends with further reading and exercises.</p>
+      </div>
+      <div class="toc">
+        <details open><summary><span class="pn">1</span>Introduction</summary><ol>
+          <li><span class="c">1</span><span>Introduction — problem classes, worked examples, and a historical timeline</span></li></ol></details>
+        <details open><summary><span class="pn">I</span>Foundations and Optimization Theory</summary><ol>
+          <li><span class="c">2</span><span>Mathematical Foundations of Optimization Theory</span></li>
+          <li><span class="c">3</span><span>Classical Optimality Conditions</span></li></ol></details>
+        <details><summary><span class="pn">II</span>Convex Optimization</summary><ol>
+          <li><span class="c">4</span><span>Basic Convex Optimization</span></li>
+          <li><span class="c">5</span><span>Generalized Convex Optimization</span></li>
+          <li><span class="c">6</span><span>Vector Space Convex Optimization</span></li></ol></details>
+        <details><summary><span class="pn">III</span>Algorithms</summary><ol>
+          <li><span class="c">7</span><span>Algorithms for Unconstrained Problems</span></li>
+          <li><span class="c">8</span><span>Algorithms for Constrained Problems</span></li></ol></details>
+        <details><summary><span class="pn">IV</span>Deterministic Optimal Control</summary><ol>
+          <li><span class="c">9</span><span>Calculus of Variations</span></li>
+          <li><span class="c">10</span><span>Discrete-Time Optimal Control</span></li>
+          <li><span class="c">11</span><span>Continuous-Time Optimal Control</span></li>
+          <li><span class="c">12</span><span>Optimal Control under Incomplete Information</span></li></ol></details>
+        <details><summary><span class="pn">V</span>Stochastic Optimal Control</summary><ol>
+          <li><span class="c">13</span><span>Estimation Theory</span></li>
+          <li><span class="c">14</span><span>Kalman Filtering</span></li>
+          <li><span class="c">15</span><span>Stochastic Control</span></li></ol></details>
+        <details><summary><span class="pn">A·B</span>Appendices</summary><ol>
+          <li><span class="c">A</span><span>Linear System Theory</span></li>
+          <li><span class="c">B</span><span>Probability Theory</span></li></ol></details>
+      </div>
+      <div class="btns" style="margin-top:2rem"><a class="btn primary" href="../assets/books/optimization-optimal-control.pdf">Download the book (PDF, 6.6 MB)</a></div>
+    </div></section>
+
+    <section id="resources"><div class="wrap">
+      <div class="sec-head">
+        <span class="label">Companion resources</span>
+        <h2>Manual, slides, code, and corrections</h2>
+        <p>This is the book's companion website, for material that does not fit between the covers. Items are posted
+          here as they become ready, and further supplementary material will be added over time.</p>
+      </div>
+      <div class="resources">
+        <div class="res">
+          <span class="status ready">Available</span>
+          <h3>The complete book</h3>
+          <p>All fifteen chapters, both appendices, and the full index, 777 pages.
+            <a href="../assets/books/optimization-optimal-control.pdf">Download the PDF (6.6 MB)</a>.</p>
+        </div>
+        <div class="res">
+          <span class="status soon">Coming soon</span>
+          <h3>Lecture slides</h3>
+          <p>Slides for each lecture of ECE-GY 6233, following the book chapter by chapter, for students and for
+            instructors teaching from it.</p>
+        </div>
+        <div class="res">
+          <span class="status soon">Coming soon</span>
+          <h3>Code for the figures</h3>
+          <p>The scripts behind the book's plots and numerical examples, so that readers can reproduce them and vary
+            the parameters.</p>
+        </div>
+        <div class="res">
+          <span class="status open">Reports welcome</span>
+          <h3>Corrections</h3>
+          <p>A list of corrections to the book, updated as errors are found. None are posted yet. Please send any error
+            you find to <a href="mailto:qz494@nyu.edu">qz494@nyu.edu</a>.</p>
+        </div>
+        <div class="res manual">
+          <img src="../assets/books/optimization-optimal-control-solutions-cover.jpg" alt="Cover of the Solutions Manual for Lectures on Optimization and Optimal Control Theory" width="840" height="1200" loading="lazy">
+          <div>
+            <span class="status open">For instructors</span>
+            <h3>Solutions manual</h3>
+            <p>Worked solutions to the exercises of all fifteen chapters and both appendices, 315 pages. Each problem
+              is restated above its solution, so the manual reads on its own; where an exercise asks for a number or a
+              plot, the solution gives the quantity in closed form and states the values a correct implementation
+              should reproduce. Instructors teaching from the book can request a copy from
+              <a href="mailto:qz494@nyu.edu">qz494@nyu.edu</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div></section>
+
+    <section id="teaching"><div class="wrap">
+      <div class="sec-head">
+        <span class="label">Teaching</span>
+        <h2>Where this material is taught</h2>
+        <p>Instructors who use the book in a course are welcome to <a href="mailto:qz494@nyu.edu">write to me</a>.</p>
+      </div>
+      <div class="community">
+        <div><h3>NYU Tandon · ECE-GY 6233 System Optimization Methods</h3><p>The graduate course these lectures were
+          written for, taken by students in electrical and computer engineering, mechanical and civil engineering,
+          computer science, and finance.</p></div>
+        <div><h3>A one-term path</h3><p>Chapters 1 to 8 make a term on optimization: foundations, optimality
+          conditions, convexity and duality, and algorithms. Chapters 9 to 15 make a term on optimal control, resting
+          on the first.</p></div>
+        <div><h3>Prerequisites</h3><p>Multivariable calculus and linear algebra. The appendices supply the linear
+          system theory and the probability used in Parts IV and V, so neither is assumed in advance.</p></div>
+      </div>
+    </div></section>
+
+    <section id="related"><div class="wrap">
+      <div class="sec-head">
+        <span class="label">Related</span>
+        <h2>Other books and course material</h2>
+        <p>Optimization and control are the working language of the other books on this site; several continue where
+          these lectures stop.</p>
+      </div>
+      <div class="community">
+        <div><h3><a href="../game-theory/">Lectures on Static and Dynamic Game Theory</a></h3><p>Optimal control with
+          more than one controller. Its appendix on optimal control covers, in brief, what Parts IV and V of this book
+          develop in full.</p></div>
+        <div><h3><a href="../agentic-ai/">Agentic AI</a> and <a href="../tokenomics/">AI Tokenomics</a></h3><p>Where the
+          decision-maker is an artificial agent, and the objective, the constraints, and the price of computation are
+          themselves design variables.</p></div>
+        <div><h3><a href="../">Research and publications</a></h3><p>Papers from the group on optimization, control,
+          learning, and security. The <a href="../publications.html">full list</a> is kept on the main site.</p></div>
+      </div>
+      <div class="see">
+        <a class="btn" href="../">Quanyan Zhu →</a>
+        <a class="btn" href="../publications.html">All publications →</a>
+      </div>
+    </div></section>
+
+  </main>
+
+  <footer><div class="wrap">
+    <span>© 2026 Quanyan Zhu</span>
+    <span><a href="../">Quanyan Zhu</a> · <a href="../publications.html">Publications</a> · <a href="mailto:qz494@nyu.edu">qz494@nyu.edu</a></span>
+  </div></footer>
+</body>
+</html>
