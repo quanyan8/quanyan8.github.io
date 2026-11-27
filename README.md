@@ -11,7 +11,7 @@ Personal research homepage of Quanyan Zhu, served by GitHub Pages at https://qua
 - `game-theory/`: companion website of the Başar–Zhu SIAM book (about, contents, Part I sample, resources: slides, figure code, corrections; teaching; research themes), cited in the book's Preface; edit directly
 - `cognitive-security/`: Cognitive Security book site (single page with interactive resilience-curve lab, Def. 4.10); edit directly
 - `agentic-ai/`: Agentic AI book site (single page with interactive error–recovery reliability lab, Prop. 2.13); edit directly
-- `tokenomics/`: AI Tokenomics book site (single page with interactive context-replay cost calculator); edit directly
+- `tokenomics/`: AI Tokenomics book site, a companion page on the game-theory layout (about, features, structure and contents, the seven labs, resources, research); edit directly. The sample PDF is built in the book folder by `tools/make_web_sample.sh` (Chapters 1, 7, 13, 18 and Lab 1, with the book's page numbers)
 - `deception/`: Game Theory for Deception site (home with primer and interactive honeypot game, publications by theme, book, events); plain HTML sharing `deception/style.css`, edit directly
 - `tools/build_publications.py`: rebuilds `publications.html` from the LaTeX list
 
